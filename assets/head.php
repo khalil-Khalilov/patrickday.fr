@@ -1,8 +1,10 @@
 <?php
+
 /*recupere le fichier des fonctions*/
 require('assets/functions.php');
 /*connexion à une base de donnees*/
 $pdo=connexion('bdd_patrick');
+
 session_start();
 ?>
 
