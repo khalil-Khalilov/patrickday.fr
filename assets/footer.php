@@ -24,12 +24,11 @@
               </ul>
             </div>
           </div>
-        </div>
-        
-      </footer>
 
-    </div>
-        <script src="assets/gallery_app.js"></script>
+
+</footer>
+
+        <script src="assets/app.js"></script>
         <script src="assets/wow.min.js"></script>
         <script> new WOW().init(); </script>
         
@@ -41,16 +40,5 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <!-- the jScrollPane script -->
     <script type="text/javascript" src="assets/jquery.jscrollpane.min.js"></script>
- 
-    <!--instantiate after some browser sniffing to rule out webkit browsers-->
-    <script type="text/javascript">
-     
-      $(document).ready(function () {
-          if (!$.browser.webkit) {
-              $('.Clisteimages').jScrollPane();
-          }
-      });     
-    </script>
-
   </body>
 </html>

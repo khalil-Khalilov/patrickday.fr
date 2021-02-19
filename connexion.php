@@ -30,13 +30,15 @@ if(isset($message)) {
 }
 ?>
 
-<?php if(empty($_SESSION['pseudonyme'])) : ?>
-<form class="sconnexion" action="" method="post">
-    Pseudonyme <input class="spseudonyme" type="text" name="pseudonyme" /><br />
-    Mot de passe <input class="smdp" type="password" name="mot_de_passe" /><br />
-    <input type="submit" value="Valider" />
-</form>
-<?php endif; ?>
+    <?php if(empty($_SESSION['pseudonyme'])) : ?>
+    <form class="sconnexion" action="" method="POST">
+        Pseudonyme <input class="spseudonyme" type="text" name="pseudonyme" /><br />
+        Mot de passe <input class="smdp" type="password" name="mot_de_passe" /><br />
+        <input type="submit" value="Valider" />
+    </form>
+    <?php endif; ?>
+
+    
 <?php
 require('assets/footer.php');
 ?>

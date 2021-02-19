@@ -52,29 +52,31 @@ require('assets/head.php')
           </div>
 
           <div class="ContainerApropos">
-            <ul class="Clisteimages">
-              <?php $requete = "SELECT * FROM images_categorie WHERE id_categorie = :id_categorie";
-                    $images = $pdo->prepare($requete);
-                    $images->execute(['id_categorie' => $donnees['id']]);
-                    while($reponses=$images->fetch()){
-                   ?>
-                     <li><img src="<?=$reponses['adresse_image'];?>" alt="<?=$reponses['titre_image'];?>" class="Cphotoapercu"/></li>
-                  <?php } ?>        
-            </ul>
+              <ul class="Clisteimages">
+                <?php $requete = "SELECT * FROM images_categorie WHERE id_categorie = :id_categorie";
+                      $images = $pdo->prepare($requete);
+                      $images->execute(['id_categorie' => $donnees['id']]);
+                      while($reponses=$images->fetch()){
+                    ?>
+                      <li><img src="<?=$reponses['adresse_image'];?>" alt="<?=$reponses['titre_image'];?>" class="Cphotoapercu"/></li>
+                    <?php } ?>        
+              </ul>
 
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
 
-              <!-- The Close Button -->
-              <span class="close">&times;</span>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                  <!-- The Close Button -->
+                  <span class="close">&times;</span>
 
-              <!-- Modal Content (The Image) -->
-              <img src=""class="modal-content" id="ModalImg">
+                  <!-- Modal Content (The Image) -->
+                  <img src="" class="modal-image" id="ModalImg">
 
-              <!-- Modal Caption (Image Text) -->
-              <div id="caption"></div>
-           </div>
-        </div>  
+                  <!-- Modal Caption (Image Text) -->
+                  <div id="caption"></div>
+              </div>
+
+            </div>
+          </div>  
   <?php } ?>
 
 <?php

@@ -1,4 +1,5 @@
 <?php
+
 /*recupere le fichier des fonctions*/
 require('assets/functions.php');
 /*connexion à une base de donnees*/

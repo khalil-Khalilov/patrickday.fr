@@ -18,6 +18,7 @@ $(function(){
         $('.gallery-img').addClass('animate__animated animate__zoomIn');
     })
 
+
     //Function d'affichage d'image en click
     $('img').each(function(){
 
@@ -36,11 +37,6 @@ $(function(){
             $('#myModal').css('display', 'none');
         })
     })
-
-
-
-
-
 
     /* Carousel */
     $('#carousel img').eq(0).css('display', 'block');
@@ -109,5 +105,13 @@ $(function(){
 
    slader();
 
+
+
+   /* Scroll horizontal */ 
+   $(document).ready(function () {
+    if (!$.browser.webkit) {
+        $('.Clisteimages').jScrollPane();
+    }
+});
 })
 
