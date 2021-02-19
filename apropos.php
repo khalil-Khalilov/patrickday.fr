@@ -1,9 +1,4 @@
 <?php
-/*recupere le fichier des fonctions*/
-require('assets/functions.php');
-/*connexion à une base de donnees*/
-$pdo=connexion('bdd_patrick');
-
 require('assets/head.php')
 ?>
 <div class="container">

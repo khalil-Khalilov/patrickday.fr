@@ -1,11 +1,10 @@
 <?php 
 require('assets/head.php');
 $message = null;
-$pdo = new PDO ('mysql:host=localhost;dbname=bdd_patrick;charset=utf8', 'root', '');
 
 if(!empty($_POST['pseudonyme']) && !empty($_POST['mot_de_passe'])) {
     $pseudonyme = htmlspecialchars($_POST['pseudonyme']);
-    $mot_de_passe = htmlspecialchars($_POST['mot_de_passe']);
+    $mot_de_passe = sha1($_POST['mot_de_passe']);
 
     $sql = "SELECT mot_de_passe, rang FROM user WHERE pseudonyme=:pseudonyme";
     $requete = $pdo->prepare($sql);

@@ -1,19 +1,15 @@
      
-<footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+<footer class="section footer-classic context-dark bg-image">
         <div class="container">
           <div class="row row-30">
             <div class="col-md-4 col-xl-5">
               <div class="pr-xl-4"><a class="brand Slogo" href="index.php">Patrick DAY</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor assumenda mollitia consequuntur fugiat quia tenetur hic, iust</p>
-                <!-- Rights-->
-                <p class="rights"><span>© </span><span class="copyright-year">2020</span><span> </span><span>Company</span><span> - </span><span>All Rights Reserved.</span></p>
               </div>
             </div>
             <div class="col-md-4">
               <h5>Contacts</h5>
               
               <dl class="contact-list">
-                <dt>email:</dt>
                 <dd><a href="mailto:stalkergame@sfr.fr">stalkergame@sfr.fr</a></dd>
               </dl>
               
