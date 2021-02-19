@@ -259,6 +259,10 @@ body {
     color:#8E0754;
   }
 
+  .ContainerApropos ul li a:hover {
+    color:#fff;
+  }
+
   .Clisteimages {
     overflow-x: scroll;
     white-space:nowrap;

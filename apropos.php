@@ -8,7 +8,7 @@ require('assets/head.php')
     <p>════════════♫════════════</p>
     <ul>
         <li><a href="index.php" ><em>Accueil</em></a></li>
-        <li><em>/ A propos</em></li>
+        <li><a href="apropos.php" style="color:#767575;"><em>/ A propos</em></a></li>
     </ul>
   </div>
 
@@ -68,6 +68,7 @@ require('assets/head.php')
               <!-- The Close Button -->
               <span class="close">&times;</span>
 
+<<<<<<< HEAD
               <!-- Modal Content (The Image) -->
               <img src=""class="modal-content" id="ModalImg">
 
@@ -75,6 +76,14 @@ require('assets/head.php')
               <div id="caption"></div>
            </div>
         </div>  
+=======
+                  <!-- Modal Caption (Image Text) -->
+                  <div id="caption"></div>
+              </div>
+              
+            </div>
+          </div>  
+>>>>>>> ed38ca29dbd05ee8a662a8aeb4f6118703f4833d
   <?php } ?>
 
 <?php

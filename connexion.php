@@ -38,7 +38,6 @@ if(isset($message)) {
     </form>
     <?php endif; ?>
 
-    
 <?php
 require('assets/footer.php');
 ?>
