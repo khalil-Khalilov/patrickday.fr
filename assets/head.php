@@ -32,7 +32,7 @@ session_start();
       $name =htmlspecialchars($_POST["name"]);
       $email = htmlspecialchars($_POST["email"]);
       $message = htmlspecialchars($_POST["message"]);
-      $connexion = mysqli_connect("localhost", "root", "", "contact_patrick") or die("Erreur de connexion: " . mysqli_error($connexion));
+      $connexion = mysqli_connect("localhost", "root", "", "bdd_patrick") or die("Erreur de connexion: " . mysqli_error($connexion));
       $result = mysqli_query($connexion, "INSERT INTO contact (name, email, message) VALUES ('" . $name. "', '" . $email. "','" . $message. "')");
       if($result){
         $db_msg = "Vos informations de contact sont enregistrées avec succés.";
