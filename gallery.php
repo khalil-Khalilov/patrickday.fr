@@ -2,6 +2,16 @@
 <?php
 require('assets/head.php')
 ?>
+
+<div class="ContainerApropos">
+    <h1>Galeries</h1>
+    <p>════════════♫════════════</p>
+    <ul>
+        <li><a href="index.php" ><em>Accueil</em></a></li>
+        <li><em>/ Galeries</em></li>
+    </ul>
+  </div>
+
 <!---->
 <!--Categories bar-->
 <div class="kh-container" id="kh-categories-container">
