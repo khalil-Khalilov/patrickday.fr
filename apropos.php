@@ -1,9 +1,4 @@
 <?php
-/*recupere le fichier des fonctions*/
-require('assets/functions.php');
-/*connexion à une base de donnees*/
-$pdo=connexion('bdd_patrick');
-
 require('assets/head.php')
 ?>
 <div class="container">
@@ -13,7 +8,7 @@ require('assets/head.php')
     <p>════════════♫════════════</p>
     <ul>
         <li><a href="index.php" ><em>Accueil</em></a></li>
-        <li><em>/ A propos</em></li>
+        <li><a href="apropos.php" style="color:#767575;"><em>/ A propos</em></a></li>
     </ul>
   </div>
 
@@ -74,7 +69,7 @@ require('assets/head.php')
               <span class="close">&times;</span>
 
               <!-- Modal Content (The Image) -->
-              <img src=""class="modal-content" id="ModalImg">
+              <img src=""class="modal-image" id="ModalImg">
 
               <!-- Modal Caption (Image Text) -->
               <div id="caption"></div>

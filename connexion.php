@@ -1,7 +1,6 @@
 <?php 
 require('assets/head.php');
 $message = null;
-$pdo = new PDO ('mysql:host=localhost;dbname=bdd_patrick;charset=utf8', 'root', '');
 
 if(!empty($_POST['pseudonyme']) && !empty($_POST['mot_de_passe'])) {
     $pseudonyme = htmlspecialchars($_POST['pseudonyme']);
@@ -35,7 +34,7 @@ if(isset($message)) {
 <form class="sconnexion" action="" method="post">
     Pseudonyme <input class="spseudonyme" type="text" name="pseudonyme" /><br />
     Mot de passe <input class="smdp" type="password" name="mot_de_passe" /><br />
-    <input type="submit" value="Valider" />
+    <input type="submit" value="Valider"/>
 </form>
 <?php endif; ?>
 <?php
