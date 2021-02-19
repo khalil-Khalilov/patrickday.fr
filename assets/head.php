@@ -1,5 +1,10 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=bdd_patrick;charset=utf8', 'root', '');
+
+/*recupere le fichier des fonctions*/
+require('assets/functions.php');
+/*connexion à une base de donnees*/
+$pdo=connexion('bdd_patrick');
+
 session_start();
 ?>
 
