@@ -66,6 +66,7 @@ require('assets/head.php')
           </div>
 
           <div class="ContainerApropos">
+
               <ul class="Clisteimages">
                 <?php $requete = "SELECT * FROM images_categorie WHERE id_categorie = :id_categorie";
                       $images = $pdo->prepare($requete);
@@ -76,20 +77,21 @@ require('assets/head.php')
                     <?php } ?>        
               </ul>
 
-
               <!-- The Modal -->
               <div id="myModal" class="modal">
-                  <!-- The Close Button -->
-                  <span class="close">&times;</span>
 
-                  <!-- Modal Content (The Image) -->
-                  <img src="" class="modal-image" id="ModalImg">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
 
-                  <!-- Modal Caption (Image Text) -->
-                  <div id="caption"></div>
+                <!-- Modal Content (The Image) -->
+                <img src=""class="modal-content" id="ModalImg">
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption"></div>
               </div>
     
           </div>  
+
   <?php } ?>
 
 <?php
