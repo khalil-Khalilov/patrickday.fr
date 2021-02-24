@@ -43,6 +43,7 @@ body {
 .Cnav {       /*div qui emglobe la partie grise de la barre de navigation*/
   width: 100%;
   height: 15vh;
+  margin-bottom: 7em;
   display: flex;
   background:#211F28;
   border-left: 8px solid black;
@@ -91,6 +92,7 @@ body {
 .Cmenu #Ca:hover{
   background-color: #8E0754;
 }
+
 
 
 @media screen and (max-width: 767px){
@@ -162,7 +164,6 @@ body {
 }
 
 
-
 /* CONTACT */
 
 #souheil-formulaire{
@@ -173,12 +174,14 @@ body {
     width: 100%;
     background: #231C24;
   }
+
   h3{
     text-align:center;
     font-size:20px;
     color: white;
     
   }
+
   input{
     width:100%;
     height:35px;
@@ -187,6 +190,7 @@ body {
     border-radius:3px;
     padding:5px;
   }
+
   input[type=submit]{
     background-color: #8E0754;
     border: 1px solid white;
@@ -202,14 +206,15 @@ body {
     transition: transform .2s;
   }
 
+
   input[type=submit]:hover{
     transform: scale(1.1);
   }
-
   label{
     margin-top: 24px;
     color:white;
   }
+
   textarea{
     width:100%;
     height:140px;
@@ -230,6 +235,7 @@ body {
     margin-top: 34px;
     width: 39%;
   }
+
   .errorMessage{
     background-color: #e64141;
     border: #da1414 1px solid;
@@ -238,6 +244,7 @@ body {
     border-radius: 4px;
     width: 39%;
   }
+
   .infoMessage{
     color: red;
     font-style: italic;
@@ -732,7 +739,6 @@ margin:14px;
 }
 
 #kh-categories-container{
-  margin-top: 6em;
   border-radius: 9px;
   font: italic 17px/20px Georgia,"Times New Roman",Times,serif;
   display: flex;
@@ -743,10 +749,8 @@ margin:14px;
 }
 
 .kh-container{
-  width: 80%;
   min-height: 10vh;
   margin: auto;
-  margin-top: 5em;
   margin-bottom: 5em;
 }
 
@@ -826,8 +830,6 @@ margin:14px;
 }
 
 
-
-
 /*Responsive Grid for Images*/
 
 .row {
@@ -862,7 +864,36 @@ margin:14px;
   }
 }
 
+@media all and (max-width: 767px){
 
+  #souheil-formulaire{
+  padding: 80px 35px;
+  }
+
+  input[type=submit]{
+  margin-left: 18%;
+  }
+
+  .scontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.stext {
+  width: 100%;
+  margin-top:4em;
+  padding: 30px;
+}
+
+#carousel{
+  display: none;
+}
+
+
+}
 
 
 /*Carousel - Khalil*/
@@ -909,3 +940,18 @@ margin:14px;
  opacity: 1;
 }
 
+
+/*Espace Admin - Khalil*/
+
+#admin_nav-items{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.admin_nav-btn{
+  padding: .4em;
+}
+
+.fas:hover{
+  color:red;
+}

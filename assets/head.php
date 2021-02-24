@@ -1,11 +1,14 @@
 <?php
+session_start();
 
 /*recupere le fichier des fonctions*/
 require('assets/functions.php');
 /*connexion à une base de donnees*/
 $pdo=connexion('bdd_patrick');
 
-session_start();
+
+$erreurs = [];
+$success = null;
 ?>
 
 <?php
@@ -101,7 +104,8 @@ session_start();
             </ul> 
           </div> 
         </div>
-      </div>  
+      </div> 
+  
   
     <!--Fin Barre de navigation-->
 

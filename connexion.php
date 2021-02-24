@@ -1,42 +1,74 @@
 <?php 
 require('assets/head.php');
-$message = null;
-
-if(!empty($_POST['pseudonyme']) && !empty($_POST['mot_de_passe'])) {
-    $pseudonyme = htmlspecialchars($_POST['pseudonyme']);
-    $mot_de_passe = sha1($_POST['mot_de_passe']);
-
-    $sql = "SELECT mot_de_passe, rang FROM user WHERE pseudonyme=:pseudonyme";
-    $requete = $pdo->prepare($sql);
-    $requete->execute([
-        'pseudonyme' => $pseudonyme
-    ]);
-
-    $donnees = $requete->fetch();
-    if($mot_de_passe === $donnees['mot_de_passe']) {
-        $_SESSION['pseudonyme'] = $pseudonyme;
-        $_SESSION['rang'] = $donnees['rang'];
-        $message = "Vous êtes désormais connecté $pseudonyme, <a href='index.php'>revenir à l'accueil du site</a>.";
-    }
-    else {
-        $message = "Mauvais identifiants ! Veuillez réessayer.";
-    }
-}
 ?>
 
 <?php 
-if(isset($message)) {
-    echo $message;
+if(!empty($_POST['pseudonyme']) && !empty($_POST['mot_de_passe'])) {
+    $pseudonyme = htmlspecialchars($_POST['pseudonyme']);
+    $mot_de_passe = htmlspecialchars($_POST['mot_de_passe']);
+    $password="ARGON2ID*V=19+M=65536,T=4,P=1*DZRZDNC3ZHN0VGRNMJV";
+    
+    
+
+    $sql = ('SELECT mot_de_passe, rang FROM `user` WHERE pseudonyme=:pseudonyme');
+
+    $req = $pdo->prepare($sql);
+
+    $req->execute([
+        'pseudonyme' => $pseudonyme
+    ]);
+
+    $donnees = $req->fetch();
+
+    $decrypted_password=openssl_decrypt($donnees['mot_de_passe'],"AES-128-ECB",$password);
+
+    if($mot_de_passe === $decrypted_password) {
+        $_SESSION['pseudonyme'] = $pseudonyme;
+        $_SESSION['rang'] = $donnees['rang'];
+
+        $success = "Vous êtes désormais connecté $pseudonyme, <a href='index.php'>revenir à l'accueil du site</a>.";
+    }
+    else {
+        $erreurs[] = "Mauvais identifiants ! Veuillez réessayer.";
+    }
 }
+
 ?>
 
-    <?php if(empty($_SESSION['pseudonyme'])) : ?>
-    <form class="sconnexion" action="" method="POST">
-        Pseudonyme <input class="spseudonyme" type="text" name="pseudonyme" /><br />
-        Mot de passe <input class="smdp" type="password" name="mot_de_passe" /><br />
-        <input type="submit" value="Valider" />
+<!-- AFFICHAGE D'ERREUR -->
+<?php 
+    if($success) {
+        echo '<div class="alert alert-success" role="alert">'.$success.'</div>';
+        header("refresh:2;url=administration.php");
+    }
+
+    if(count($erreurs) > 0) {
+        foreach($erreurs as $err) {
+            echo '<div class="alert alert-danger" role="alert">'.$err.' </div>';
+        }
+    }
+?>
+
+<?php if(empty($_SESSION['pseudonyme'])) : ?>
+
+<div id="wrapper">
+    <form action="" method="POST">
+    <div class="form-group">
+        <label for="pseudonyme">Pseudonyme:</label>
+        <input type="text" class="form-control" name="pseudonyme" id="pseudonyme">
+    </div>
+    <div class="form-group">
+        <label for="mot_de_passe">Mot de passe</label>
+        <input type="password" class="form-control" name="mot_de_passe" id="mot_de_passe">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Valider</button>
     </form>
-    <?php endif; ?>
+</div>
+<?php else:
+    echo '<a href="administration.php"><button>Espace Admin</button></a>';
+    ?>
+<?php endif; ?>
 
 <?php
 require('assets/footer.php');
