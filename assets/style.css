@@ -575,6 +575,7 @@ body {
 
   footer a:hover{
     color:#8E0754 !important;
+    font-style: italic !important;
   }
 
   .Slogo{
@@ -584,6 +585,7 @@ body {
  
   .Slogo:hover{
     color: white !important;
+    font-style: normal !important;
   }
 
 
@@ -605,6 +607,10 @@ margin:14px;
 
 .stext h1{
   font-size: 17px;
+}
+
+.stext p{
+  color: #767575;
 }
 
 .scontainer{
@@ -664,6 +670,19 @@ margin:14px;
     display: none;
   }
 }
+
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
+      .stext{
+        font-size: 13px;
+      }
+
+      input[type=submit] {
+        margin-left: 6%;
+    }
+
+
+  }
+
 
 
 /* Gallery - Khalil */
