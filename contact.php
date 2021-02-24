@@ -2,6 +2,14 @@
 require('assets/head.php')
 ?>
 
+<div class="ContainerApropos">
+    <h1>Contact</h1>
+    <p>════════════♫════════════</p>
+    <ul>
+        <li><a href="index.php" ><em>Accueil</em></a></li>
+        <li><em>/ Contact</em></li>
+    </ul>
+  </div>
 
 <div id="box">
       <form id="souheil-formulaire" enctype="multipart/form-data" onsubmit="return validate()" method="post">

@@ -13,6 +13,7 @@ body {
   scrollbar-face-color:#211F28; /* couleur de la scrollbar avec le navigateur Internet Explorer*/
 }
 
+/* Barre de navigation*/
 
 .Cnavbar {    /*div qui emglobe toute la barre de navigation*/
   margin-top:2.5%;
@@ -94,12 +95,80 @@ body {
 
 
 
+@media screen and (max-width: 767px){
+  
+  .Cnav {
+    border-right: 6px solid black;
+    border-left: 6px solid black;
+    border-bottom: 6px solid black;
+  }
+  .Cnav .Cnomsite {
+    font-size: 30px;
+    border-bottom: 2px solid #8E0754;
+  }
+
+  #Ca {
+    font-size: 10px;
+    border-bottom: 2px solid #8E0754;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  
+  .Cnav {
+    border-right: 8px solid black;
+    border-left: 8px solid black;
+    border-bottom: 8px solid black;
+  }
+  .Cnav .Cnomsite {
+    font-size: 34px;
+    border-bottom: 4px solid #8E0754;
+  }
+
+  #Ca {
+    font-size: 12px;
+    border-bottom: 4px solid #8E0754;
+  }
+}
+
+@media screen and (max-width: 1024px){
+
+  .Cnav {
+    height:auto;
+    display:block;
+  }
+
+  .Cnomsite p {
+    margin:0px;
+  }
+
+  .Cnav #Cnavbarmenu {
+    border-right: 0px;
+  }
+
+  .Cmenu {     
+    display:center;
+    padding:0px;
+    margin-bottom: 0px;
+  }
+
+  #Ca {
+    height:auto;
+    border-left: 0px solid black;
+    padding:0px;
+  }
+
+  .Clogin {  
+    font-size: 6px;
+  }
+}
+
 
 /* CONTACT */
 
 #souheil-formulaire{
     border-radius: 2px;
-    padding: 20px 200px;
+    padding: 80px 200px;
     font-size: 14px;
     font-weight: bold;
     width: 100%;
@@ -130,12 +199,17 @@ body {
     font-size: 18px;
     color: white;
     width: 200px;
-    margin-left: 40%;
+    margin-left: 38%;
     margin-top: 50px;
     border-radius: 5px;
     margin-bottom: 50px;
+    transition: transform .2s;
   }
 
+
+  input[type=submit]:hover{
+    transform: scale(1.1);
+  }
   label{
     margin-top: 24px;
     color:white;
@@ -183,6 +257,12 @@ body {
       padding-left: 5px;
   }
 
+ 
+
+
+
+
+
   /* CONNEXION FORM */
   
   .sconnexion{
@@ -205,13 +285,13 @@ body {
     padding:10px;
   }
 
-  .ContainerApropos h1,.Contenugauche h1,.Contenudroit h1 {
+  .ContainerApropos h1,.Contenugauche h1,.Contenudroit1 h1,.Contenudroit2 h1 {
     color:#fff;
     font-size: 27px;
     margin: 5px 0px 8px;
   }
 
-  .ContainerApropos p,.Contenugauche p,.Contenudroit p {
+  .ContainerApropos p,.Contenugauche p,.Contenudroit1 p,.Contenudroit2 p {
     color:#767575;
     font-size: 17px;
   }
@@ -224,7 +304,6 @@ body {
 
   .ContainerApropos ul li {
     display:inline;
-    color:#767575;
   }
 
   .ContainerApropos ul li a{
@@ -233,27 +312,9 @@ body {
     color:#8E0754;
   }
 
-  .Clisteimages {
-    overflow-x: scroll;
-    white-space:nowrap;
+  .ContainerApropos ul li a:hover {
+    color:#fff;
   }
-
-  /* code pour changer la couleur du scroll avec navigateur Apple Safari et Google Chrome*/
-  ::-webkit-scrollbar {
-    width: 15px;
-  } /* this targets the default scrollbar (compulsory) */
-  ::-webkit-scrollbar-track {
-    background-color: #211F28;
-  } /* the new scrollbar will have a flat appearance with the set background color */
-
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2); 
-  } /* this will style the thumb, ignoring the track */
-
-  ::-webkit-scrollbar-button {
-    background-color: #767575;
-   } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
-
 
   .ContenuApropos {
     height:auto;
@@ -280,16 +341,19 @@ body {
 
   .Cpresentation {
     text-align:left;
-    margin: 1%;
   }
 
   .Cphoto {
       float: left;
-      width:30%;
+      width:31%;
       padding:1%;
   }
 
-  .Contenudroit {
+  .Contenudroit2 {
+    display:none;
+  }
+
+  .Contenudroit1,.Contenudroit2 {
     flex-basis: 40%;
     border:7px solid black;
     border-radius: 2%;
@@ -297,18 +361,20 @@ body {
     padding:10px;
   }
 
-  .Contenudroit h1::after{
+  .Contenudroit1 h1::after,.Contenudroit2 h1::after{
     content:'de ma carrière';
     color:#767575;
   }
 
-  .Contenudroit p {
+  .Contenudroit1 p,.Contenudroit2 p {
     height: 2px;
   }
 
   .Capercu {
     text-align: left;
-    margin-left:5%;
+    display:inline-block;
+    margin-bottom: 0px;
+    padding-left: 0px;
   }
 
   .Capercu li a::before {
@@ -331,13 +397,171 @@ body {
     color:#fff;
   }
 
-  .Cphotoapercu {
+  .Cimage {
     width:16.3%;
     height: 220px;
     padding:1%;
     cursor: pointer;
   }
 
+  .Clisteimages {
+    overflow-x: scroll;
+    white-space:nowrap;
+  }
+
+  /* code pour changer la couleur du scroll avec navigateur Apple Safari et Google Chrome*/
+  ::-webkit-scrollbar {
+    width: 15px;
+  } /* this targets the default scrollbar (compulsory) */
+  ::-webkit-scrollbar-track {
+    background-color: #211F28;
+  } /* the new scrollbar will have a flat appearance with the set background color */
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); 
+  } /* this will style the thumb, ignoring the track */
+
+  ::-webkit-scrollbar-button {
+    background-color: #767575;
+   } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+   
+   /*zoom sur les images au survol*/
+  .Clisteimages li img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+  }
+
+  .Clisteimages li:hover img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  /*fin zoom*/
+
+  @media screen and (min-width:360px)and (max-width:393px){
+
+    .Cphoto {
+      width: 32%;
+    }
+  }
+
+  @media screen and (min-width:394px)and (max-width:767px){
+
+    .Cphoto {
+      width: 29%;
+    }
+  }
+
+  @media screen and (min-width:768px) and (max-width: 1024px){
+  
+    .Capercu {
+      display:-webkit-inline-box;
+      display: -moz-inline-box;
+      display: inline-box;
+    }
+
+    .Capercu li a {
+      padding:10px;
+    }
+
+    .Cphoto {
+      width:14%;
+      padding-top: 0%;
+    }
+  }
+
+  @media screen  and (max-width: 1024px){
+
+    .ContainerApropos {
+      padding:2px;
+    }
+    .ContainerApropos h1 {
+      margin:0px;
+      font-size: 18px;
+    }
+
+    .ContainerApropos p,.Contenugauche p {
+      font-size: 12px;
+      margin:0px;
+    }
+
+    .Contenudroit2 p {
+      font-size: 12px;
+      margin:0px 0px 14px;
+    }
+
+    .ContainerApropos ul li a {
+      font-size:10px;
+    }
+  
+    .ContenuApropos {
+      display:block;
+    }
+
+    .Contenugauche,.Contenudroit2 {
+      width:100%;
+    }
+
+    .Contenugauche h1,.Contenudroit2 h1 {
+      font-size: 18px;
+      margin:0px;
+    }
+
+    .Contenugauche {
+      margin-bottom:2.5%;
+    }
+
+    .Contenudroit1 {
+      display:none;
+    }
+
+    .Contenudroit2{
+      padding:1px;
+      margin-bottom: 2.5%;
+      display:block;
+    }
+
+    .Capercu li a::before {
+      font-size: 15px;
+    }
+
+    .Capercu li a {
+      font-size: 12px;
+    }
+
+    .Capercu li {
+      height: auto;
+    }
+    
+    .ContainerApropos .Clisteimages li {
+      display:block;
+    }
+
+    .Cimage {
+      width:100%;
+      height:auto;
+    }
+
+    .Clisteimages { 
+      overflow-x: unset;
+      white-space:unset;
+    }
+
+    
+    .Clisteimages li img {
+      -webkit-transform: unset;
+      transform: unset;
+      -webkit-transition: unset;
+      transition: unset;
+    }
+  
+    .Clisteimages li:hover img {
+      -webkit-transform: unset;
+      transform: unset;
+    }
+  }
 
    /* FOOTER */
 
@@ -358,6 +582,7 @@ body {
 
   footer a:hover{
     color:#8E0754 !important;
+    font-style: italic !important;
   }
 
   .Slogo{
@@ -367,6 +592,7 @@ body {
  
   .Slogo:hover{
     color: white !important;
+    font-style: normal !important;
   }
 
 
@@ -378,8 +604,9 @@ body {
   border: solid black 5px;
   padding: 30px;
   border-radius: 15px;
-  background-color: #433e45;
+  background-color: #2b262d;
 }
+
 
 .stext h4{
 margin:14px;
@@ -389,12 +616,80 @@ margin:14px;
   font-size: 17px;
 }
 
+.stext p{
+  color: #767575;
+}
+
 .scontainer{
   margin: 5em 0em 5em 0em;
   display: flex;
   justify-content: space-around;
   width: 100%;
 }
+
+@media all and (max-width: 767px){
+
+      #souheil-formulaire{
+      padding: 80px 35px;
+      }
+
+      input[type=submit]{
+      margin-left: 18%;
+      }
+
+      .scontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .stext {
+      text-align: center;
+      width: 100%;
+      margin-top:4em;
+      border: solid black 5px;
+      padding: 30px;
+      border-radius: 15px;
+      background-color: #433e45;
+    }
+
+    #carousel{
+      display: none;
+    }
+
+}
+
+@media screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  input[type=submit] {
+  
+    margin-left: 19%;
+  }
+
+
+    .stext {
+      width: 50%;
+      margin: 20px;
+  }
+
+  #carousel{
+    display: none;
+  }
+}
+
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
+      .stext{
+        font-size: 13px;
+      }
+
+      input[type=submit] {
+        margin-left: 6%;
+    }
+
+
+  }
+
 
 
 /* Gallery - Khalil */

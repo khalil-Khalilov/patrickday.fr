@@ -88,8 +88,9 @@ $success = null;
   </head>
   <body>
 
-  <!-- Barre de navigation-->
   <div class="container">
+    
+    <!-- Barre de navigation-->
       <div class="Cnavbar">
         <div class="Clogin"><a href="connexion.php"><em>log in</em></a><a href="deconnexion.php"><em>log out</em></a></div>
         <div class="Cnav">

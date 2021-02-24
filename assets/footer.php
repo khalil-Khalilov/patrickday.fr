@@ -33,13 +33,14 @@
         <script src="assets/wow.min.js"></script>
         <script> new WOW().init(); </script>
         
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
   
-    <!--Code pour changer la couleur de la scrollbar avec les navigateurs Firefox,IE et Opera-->
-    <!-- latest jQuery direct from google's CDN -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!-- the jScrollPane script -->
-    <script type="text/javascript" src="assets/jquery.jscrollpane.min.js"></script>
+      <!--Code pour changer la couleur de la scrollbar avec les navigateurs Firefox,IE et Opera-->
+      <!-- latest jQuery direct from google's CDN -->
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <!-- the jScrollPane script -->
+      <script type="text/javascript" src="assets/jquery.jscrollpane.min.js"></script>
+    </div><!--ferme la div container ouverte dans head-->
   </body>
 </html>
