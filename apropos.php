@@ -1,7 +1,6 @@
 <?php
 require('assets/head.php')
 ?>
-<div class="container">
 
   <div class="ContainerApropos">
     <h1>A PROPOS</h1>
@@ -13,6 +12,19 @@ require('assets/head.php')
   </div>
 
   <div class="ContenuApropos">
+    <!--affichage uniquement en mode responsive-->
+    <div class="Contenudroit2">
+      <h1>APERCU </h1>
+      <p>════════════♫════════════</p>
+      <ul class="Capercu">
+        <li><a href="#articles">Les articles de presse</a></li>  
+        <li><a href="#affiches">Théatre, Comédies musicales, Films</a></li>
+        <li><a href="#comedien">Le Comédien</a></li>
+        <li><a href="#metteurenscene">Le Metteur en scène</a></li>
+        <li><a href="gallery.php">Le Plasticien</a></li>
+      </ul>
+    </div>
+    <!--fin-->
     <div class="Contenugauche">
       <h1>QUI </h1>
       <p>════════════♫════════════</p>
@@ -26,7 +38,8 @@ require('assets/head.php')
         J'ai réalisé plusieurs spectacles que j'ai écrit et mis en scène (Théâtre-dansé et pièces de théâtre avec différentes troupes au cours des années précédentes).
       </p>
     </div>
-    <div class="Contenudroit">
+    <!--affichage uniquement en mode écran classique-->
+    <div class="Contenudroit1">
       <h1>APERCU </h1>
       <p>════════════♫════════════</p>
       <ul class="Capercu">
@@ -37,6 +50,7 @@ require('assets/head.php')
         <li><a href="gallery.php">Le Plasticien</a></li>
       </ul>
     </div>
+    <!--fin-->
   </div>
 
   <?php $categories=$pdo->query('SELECT * FROM categorie_apropos');
@@ -52,29 +66,32 @@ require('assets/head.php')
           </div>
 
           <div class="ContainerApropos">
-            <ul class="Clisteimages">
-              <?php $requete = "SELECT * FROM images_categorie WHERE id_categorie = :id_categorie";
-                    $images = $pdo->prepare($requete);
-                    $images->execute(['id_categorie' => $donnees['id']]);
-                    while($reponses=$images->fetch()){
-                   ?>
-                     <li><img src="<?=$reponses['adresse_image'];?>" alt="<?=$reponses['titre_image'];?>" class="Cphotoapercu"/></li>
-                  <?php } ?>        
-            </ul>
 
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
+              <ul class="Clisteimages">
+                <?php $requete = "SELECT * FROM images_categorie WHERE id_categorie = :id_categorie";
+                      $images = $pdo->prepare($requete);
+                      $images->execute(['id_categorie' => $donnees['id']]);
+                      while($reponses=$images->fetch()){
+                    ?>
+                      <li><img src="<?=$reponses['adresse_image'];?>" alt="<?=$reponses['titre_image'];?>" class="Cimage"/></li>
+                    <?php } ?>        
+              </ul>
 
-              <!-- The Close Button -->
-              <span class="close">&times;</span>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
 
-              <!-- Modal Content (The Image) -->
-              <img src=""class="modal-content" id="ModalImg">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
 
-              <!-- Modal Caption (Image Text) -->
-              <div id="caption"></div>
-           </div>
-        </div>  
+                <!-- Modal Content (The Image) -->
+                <img src=""class="modal-content" id="ModalImg">
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption"></div>
+              </div>
+    
+          </div>  
+
   <?php } ?>
 
 <?php
