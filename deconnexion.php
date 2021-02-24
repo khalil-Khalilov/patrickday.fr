@@ -2,13 +2,12 @@
 require('assets/head.php')
 ?>
 
-<?php
-    unset($_SESSION['pseudonyme']);
-    echo 'Vous avez bien été déconnecté';
+<?php 
+unset($_SESSION['pseudonyme']);
+unset($_SESSION['rang']);
+echo '<div class="alert alert-success" role="alert"> Vous avez bien été deconnecté </div>';
+header("refresh:2;url=index.php");
 ?>
-
-<a href="connexion.php">Log in</a><br />
-<a href="index.php">Retour a la page d'accueil</a>
 
 <?php
 require('assets/footer.php')

@@ -19,6 +19,64 @@ $(function(){
     })
 
 
+
+
+    //Btn Modify Password
+    $('#btn-modify-password').on('click', function(){
+        
+        $('.formulaire_modify-password').removeClass('not_show-container');
+        $('.add_image').addClass('not_show-container');
+        $('.add_video').addClass('not_show-container');
+        $('.list_of-images').addClass('not_show-container');
+        $('.list_of-video').addClass('not_show-container');
+    })
+
+    //Btn ADD img
+    $('#btn-add_image').on('click', function(){
+    
+        $('.formulaire_modify-password').addClass('not_show-container');
+        $('.add_image').removeClass('not_show-container');
+        $('.add_video').addClass('not_show-container');
+        $('.list_of-images').addClass('not_show-container');
+        $('.list_of-video').addClass('not_show-container');
+    })
+
+    //Btn ADD video
+    $('#btn-add_video').on('click', function(){
+        
+        $('.formulaire_modify-password').addClass('not_show-container');
+        $('.add_image').addClass('not_show-container');
+        $('.add_video').removeClass('not_show-container');
+        $('.list_of-images').addClass('not_show-container');
+        $('.list_of-video').addClass('not_show-container');
+    })
+
+    //Btn List of image
+    $('#btn-list_of-images').on('click', function(){
+        
+        $('.formulaire_modify-password').addClass('not_show-container');
+        $('.add_image').addClass('not_show-container');
+        $('.add_video').addClass('not_show-container');
+        $('.list_of-images').removeClass('not_show-container');
+        $('.list_of-video').addClass('not_show-container');
+    })
+
+    //Btn List of video
+    $('#btn-list_of-video').on('click', function(){
+        
+        $('.formulaire_modify-password').addClass('not_show-container');
+        $('.add_image').addClass('not_show-container');
+        $('.add_video').addClass('not_show-container');
+        $('.list_of-images').addClass('not_show-container');
+        $('.list_of-video').removeClass('not_show-container');
+    })
+
+
+
+
+
+
+
     //Function d'affichage d'image en click
     $('img').each(function(){
 
@@ -59,8 +117,6 @@ $(function(){
 
             $('#carousel img').css('display', 'none');
             $('#carousel img').eq(i).css('display', 'block');
-
-            console.log(i);
             slader();
         }, 4500)
     }
