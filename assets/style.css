@@ -92,6 +92,7 @@ body {
   background-color: #8E0754;
 }
 
+
 @media screen and (max-width: 767px){
   
   .Cnav {
@@ -161,6 +162,7 @@ body {
 }
 
 
+
 /* CONTACT */
 
 #souheil-formulaire{
@@ -197,7 +199,13 @@ body {
     margin-top: 50px;
     border-radius: 5px;
     margin-bottom: 50px;
+    transition: transform .2s;
   }
+
+  input[type=submit]:hover{
+    transform: scale(1.1);
+  }
+
   label{
     margin-top: 24px;
     color:white;
@@ -241,6 +249,12 @@ body {
       letter-spacing: 2px;
       padding-left: 5px;
   }
+
+ 
+
+
+
+
 
   /* CONNEXION FORM */
   
@@ -561,6 +575,7 @@ body {
 
   footer a:hover{
     color:#8E0754 !important;
+    font-style: italic !important;
   }
 
   .Slogo{
@@ -570,6 +585,7 @@ body {
  
   .Slogo:hover{
     color: white !important;
+    font-style: normal !important;
   }
 
 
@@ -579,11 +595,11 @@ body {
   text-align: center;
   width: 33%;
   border: solid black 5px;
-  margin: 100px;
   padding: 30px;
   border-radius: 15px;
   background-color: #2b262d;
 }
+
 
 .stext h4{
 margin:14px;
@@ -593,9 +609,80 @@ margin:14px;
   font-size: 17px;
 }
 
-.scontainer{
-display: flex;
+.stext p{
+  color: #767575;
 }
+
+.scontainer{
+  margin: 5em 0em 5em 0em;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+@media all and (max-width: 767px){
+
+      #souheil-formulaire{
+      padding: 80px 35px;
+      }
+
+      input[type=submit]{
+      margin-left: 18%;
+      }
+
+      .scontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .stext {
+      text-align: center;
+      width: 100%;
+      margin-top:4em;
+      border: solid black 5px;
+      padding: 30px;
+      border-radius: 15px;
+      background-color: #433e45;
+    }
+
+    #carousel{
+      display: none;
+    }
+
+}
+
+@media screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  input[type=submit] {
+  
+    margin-left: 19%;
+  }
+
+
+    .stext {
+      width: 50%;
+      margin: 20px;
+  }
+
+  #carousel{
+    display: none;
+  }
+}
+
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
+      .stext{
+        font-size: 13px;
+      }
+
+      input[type=submit] {
+        margin-left: 6%;
+    }
+
+
+  }
+
 
 
 /* Gallery - Khalil */
@@ -821,3 +908,4 @@ display: flex;
 #carousel .next:hover, #carousel .prev:hover{
  opacity: 1;
 }
+
