@@ -614,10 +614,20 @@ margin:14px;
 
 .stext h1{
   font-size: 17px;
+  margin-top: 10%;
+}
+
+.stext h1 a{
+  color:#fff;
 }
 
 .stext p{
   color: #767575;
+  text-align:left;
+}
+
+.stext p a{
+  color:#8E0754;
 }
 
 .scontainer{
