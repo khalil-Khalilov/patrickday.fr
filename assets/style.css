@@ -418,7 +418,7 @@ body {
   } /* the new scrollbar will have a flat appearance with the set background color */
 
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2); 
+    background-color:black; 
   } /* this will style the thumb, ignoring the track */
 
   ::-webkit-scrollbar-button {
@@ -955,13 +955,35 @@ margin:14px;
 
 #admin_nav-items{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding:0;
 }
 
 .admin_nav-btn{
   padding: .4em;
+  border-radius: 15px;
+  margin-top: 2em;
+}
+
+#admin_nav-items li button:hover{
+background: #8E0754;
+color:#767575;
 }
 
 .fas:hover{
-  color:red;
+  color:#8E0754;
 }
+
+.table th,.table td{
+  color:#767575;
+}
+
+input#monImage{
+  height:auto;
+}
+
+button#monBoutonRose{
+  background: #8E0754;
+  color:#fff;
+}
+

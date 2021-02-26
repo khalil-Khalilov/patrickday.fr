@@ -5,7 +5,7 @@ require('assets/head.php');
 
 <?php
 if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
-    echo "Bienvenue sur l'administration.";
+    echo "<h1>Bienvenue sur l'espace administration</h1><br/>";
 } else {
     die("PAS DE HACK");
 }
@@ -101,7 +101,7 @@ if(!empty($_POST['formulaire_envoyer'])){
         }
     }
 ?>
-
+    <h2>Modifier l'image "<?=$donnees['titre_image'];?>" de la galerie</h2>
     <!-- FORMULAIRE -->
     <form action="" method="POST" enctype="multipart/form-data">
 
@@ -142,14 +142,15 @@ if(!empty($_POST['formulaire_envoyer'])){
         <!--Input UPLOAD IMAGE-->
         <div class="form-group">
             <label for="monImage">Image:</label>
-            <input type="file" name="monImage" id="monImage" />
+            <input type="file" name="monImage" id="monImage" value="" />
         </div>
 
         <input type="hidden" name="formulaire_envoyer" value="ghost_btn" />
-
-        <button type="submit" class="btn btn-primary">Valider</button>
+        <br/>
+        <button type="submit" class="btn" id="monBoutonRose">Valider</button>
+        
     </form>  
-
+    <br/>
 <?php
 require('assets/footer.php');
 ?>
