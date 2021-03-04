@@ -26,7 +26,7 @@ if(!empty($_POST['pseudonyme']) && !empty($_POST['mot_de_passe'])) {
         $_SESSION['pseudonyme'] = $pseudonyme;
         $_SESSION['rang'] = $donnees['rang'];
 
-        $success = "Vous êtes désormais connecté $pseudonyme, <a href='index.php'>revenir à l'accueil du site</a>.";
+        $success = "Vous êtes désormais connecté $pseudonyme, <a href='index.php' style='color:#8E0754;'>revenir à l'accueil du site</a>.";
     }
     else {
         $erreurs[] = "Mauvais identifiants ! Veuillez réessayer.";
@@ -38,7 +38,7 @@ if(!empty($_POST['pseudonyme']) && !empty($_POST['mot_de_passe'])) {
 <!-- AFFICHAGE D'ERREUR -->
 <?php 
     if($success) {
-        echo '<div class="alert alert-success" role="alert">'.$success.'</div>';
+        echo '<div class="alert alert-secondary" role="alert">'.$success.'</div>';
         header("refresh:2;url=administration.php");
     }
 
@@ -61,12 +61,13 @@ if(!empty($_POST['pseudonyme']) && !empty($_POST['mot_de_passe'])) {
         <label for="mot_de_passe">Mot de passe</label>
         <input type="password" class="form-control" name="mot_de_passe" id="mot_de_passe">
     </div>
-
+    <br/>
     <button type="submit" class="btn btn-primary">Valider</button>
     </form>
+    <br/>
 </div>
 <?php else:
-    echo '<a href="administration.php"><button>Espace Admin</button></a>';
+    echo '<a href="administration.php"><button class="btn btn-outline-secondary" >Espace Admin</button></a><br/><br/>';
     ?>
 <?php endif; ?>
 

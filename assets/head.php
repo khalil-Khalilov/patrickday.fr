@@ -92,9 +92,9 @@ $success = null;
     
     <!-- Barre de navigation-->
       <div class="Cnavbar">
-        <div class="Clogin"><a href="connexion.php"><em>log in</em></a><a href="deconnexion.php"><em>log out</em></a></div>
+        <div class="Clogin"><a href="connexion.php"><em>log in</em></a><a href="deconnexion.php"><em> log out</em></a></div>
         <div class="Cnav">
-          <div class="Cnomsite"><p>Patrick DAY</p></div>
+          <div class="Cnomsite"><a href="index.php"><p>Patrick DAY</p></a></div>
           <div id="Cnavbarmenu">
             <ul class="Cmenu">
               <li id="Ca"><a href="index.php">ACCUEIL</a></li>

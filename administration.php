@@ -4,7 +4,7 @@ require('assets/head.php');
 
 <?php
 if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
-    echo "Bienvenue sur l'administration.";
+    echo "<h1>Bienvenue sur l'espace administration</h1>";
 } else {
     die("PAS DE HACK");
 }
@@ -31,11 +31,6 @@ if(!empty($_GET['suppr'])){
     }
 }
 
-$sql = ('SELECT id, adresse_image, titre_image, gallery_column, type_image FROM images_categorie');
-
-$req = $pdo->query($sql);
-
-$i = 1;
 ?>
 
 <?php
@@ -152,18 +147,16 @@ if(!empty($_POST['formulaire_envoyer'])){
 <div class="kh-container" id="">
     <ul id="admin_nav-items">
         <li><button id="btn-list_of-images" class="admin_nav-btn">Voir la liste des images</button></li>
-        <li><button id="btn-list_of-video" class="admin_nav-btn">Voir la liste des videos</button></li>
-        <li><button id="btn-add_image" class="admin_nav-btn">Ajouter une image à la gallery</button></li>
-        <li><button id="btn-add_video" class="admin_nav-btn">Ajouter une video à la gallery</button></li>
+        <li><button id="btn-list_of-video" class="admin_nav-btn">Voir la liste des vidéos</button></li>
+        <li><button id="btn-add_image" class="admin_nav-btn">Ajouter une image à la galerie</button></li>
+        <li><button id="btn-add_video" class="admin_nav-btn">Ajouter une vidéo à la galerie</button></li>
         <li><button id="btn-modify-password" class="admin_nav-btn">Modifier Mot de passe</button></li>
     </ul>
 </div>
 
-
-
-<!--Modiffier Mot de passe-->
+<!--Modifier Mot de passe-->
 <div class="kh-container formulaire_modify-password not_show-container"> 
-    <h1>Modiffier Mot de passe</h1>
+    <h2>Modifier Mot de passe</h2>
 
     <!-- FORMULAIRE -->
     <div id="wrapper">
@@ -176,27 +169,24 @@ if(!empty($_POST['formulaire_envoyer'])){
                 <label for="mot_de_passe">Nouveau Mot de passe:</label>
                 <input type="password" class="form-control" name="new_password" id="new_password">
             </div>
-
+            <br/>
             <input type="hidden" name="formulaire_envoyer" value="ghost_btn" />
 
-            <button type="submit" class="btn btn-primary">Valider</button>
+            <button type="submit" class="btn" id="monBoutonRose">Valider</button>
         </form>
     </div>  
 </div>
 
-
-
-
 <!--Ajoute d'image-->
 <div class="kh-container add_image not_show-container">
-    <h1>Ajouter une image</h1>
-
+    <h2>Ajouter une image à la galerie</h2>
+    <br/>
     <!-- FORMULAIRE -->
     <form action="" method="POST" enctype="multipart/form-data">
 
         <!--Button Select Type-->
         <select class="form-select" aria-label="Select picture type" name="type_image">
-            <option selected>Selectionner le type d'image</option>
+            <option selected>Sélectionner le type d'image</option>
             <option value="Dessin">Dessin</option>
             <option value="Peinture">Peinture</option>
         </select>
@@ -233,35 +223,17 @@ if(!empty($_POST['formulaire_envoyer'])){
             <label for="monImage">Image:</label>
             <input type="file" name="monImage" id="monImage" />
         </div>
-
-        <button type="submit" class="btn btn-primary">Valider</button>
+        <br/>
+        <button type="submit" class="btn" id="monBoutonRose">Valider</button>
     </form> 
 </div>
 
-
-
-
-
-
-
-<!--Ajoute de video-->
-<div class="kh-container add_video not_show-container">
-    <h1>Ajouter une video</h1>
-</div>
-
-
-
-
-
-
-
-
 <!--Liste des images-->
 <div class="kh-container list_of-images ">
-    <h1>Liste des images</h1>
+    <h2>Liste des images</h2>
     <div id="container">
 
-        <table  class="table table-success table-striped">
+        <table  class="table table-secondary table-striped">
             <thead class="table">
                 <tr>
                     <th scope="col">ID</th>
@@ -273,6 +245,9 @@ if(!empty($_POST['formulaire_envoyer'])){
                 </tr>
             </thead>
             <?php
+                $sql = ('SELECT id, adresse_image, titre_image, gallery_column, type_image FROM images_categorie');
+                $req = $pdo->query($sql);           
+                $i = 1;
                 while($donnees = $req->fetch()){
                     if($donnees['type_image'] == "Dessin" || $donnees['type_image'] == "Peinture"){
             ?>
@@ -286,11 +261,11 @@ if(!empty($_POST['formulaire_envoyer'])){
                     
                     <td>
                         <a onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')" 
-                            href="administration.php?suppr=<?= $donnees['id']; ?>">
+                            href="administration.php?suppr=<?= $donnees['id']; ?>">Supprimer
                             <i class="fas fa-trash-alt"></i>
                             </a>
                         <a onclick="return confirm('Voulez-vous vraiment modifier cet élément ?')" 
-                        href="administration_modifier.php?modifier=<?= $donnees['id']; ?>">
+                        href="administration_modifier.php?modifier=<?= $donnees['id']; ?>">Modifier
                             <i class="fas fa-wrench"></i>
                         </a>
                     </td>
@@ -305,13 +280,14 @@ if(!empty($_POST['formulaire_envoyer'])){
     </div>
 </div>
 
-
-
-
+<!--Ajoute de video-->
+<div class="kh-container add_video not_show-container">
+    <h2>Ajouter une vidéo</h2>
+</div>
 
 <!--Liste des videos-->
 <div class="kh-container list_of-video not_show-container">
-    <h1>Liste des videos</h1>
+    <h2>Liste des vidéos</h2>
 </div>
 
 

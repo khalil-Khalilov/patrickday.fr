@@ -61,6 +61,10 @@ body {
   background: linear-gradient(0deg, rgba(33,31,40,1) 66%, rgba(55,53,64,1) 100%);
 }
 
+.Cnomsite a{
+  color: white;
+}
+
 #Cnavbarmenu {     /* div qui gère le menu de la barre de navigation*/
   flex-basis: 65%;
   border-right: 8px solid black;
@@ -259,6 +263,24 @@ margin:14px;
     display: none;
   }
 }
+
+@media screen and (max-width: 1024px){ 
+
+  #carousel{
+    display: none;
+  }
+
+  .stext {
+    text-align: center;
+    width: 338px;
+    border: solid black 5px;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #2b262d;
+    margin: 23px;
+}
+}
+
 
 @media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
       .stext{
@@ -521,7 +543,7 @@ margin:14px;
   } /* the new scrollbar will have a flat appearance with the set background color */
 
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2); 
+    background-color:black; 
   } /* this will style the thumb, ignoring the track */
 
   ::-webkit-scrollbar-button {
@@ -668,6 +690,115 @@ margin:14px;
 
  
 
+  .Slogo:hover{
+    color: white !important;
+    font-style: normal !important;
+  }
+
+
+/* ACCEUIL */
+
+.stext{
+  text-align: center;
+  width: 33%;
+  border: solid black 5px;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #2b262d;
+}
+
+
+.stext h4{
+margin:14px;
+}
+
+.stext h1{
+  font-size: 17px;
+  margin-top: 10%;
+}
+
+.stext h1 a{
+  color:#fff;
+}
+
+.stext p{
+  color: #767575;
+  text-align:left;
+}
+
+.stext p a{
+  color:#8E0754;
+}
+
+.scontainer{
+  margin: 5em 0em 5em 0em;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+@media all and (max-width: 767px){
+
+      #souheil-formulaire{
+      padding: 80px 35px;
+      }
+
+      input[type=submit]{
+      margin-left: 18%;
+      }
+
+      .scontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .stext {
+      text-align: center;
+      width: 100%;
+      margin-top:4em;
+      border: solid black 5px;
+      padding: 30px;
+      border-radius: 15px;
+      background-color: #433e45;
+    }
+
+    #carousel{
+      display: none;
+    }
+
+}
+
+@media screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  input[type=submit] {
+  
+    margin-left: 19%;
+  }
+
+
+    .stext {
+      width: 50%;
+      margin: 20px;
+  }
+
+  #carousel{
+    display: none;
+  }
+}
+
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
+      .stext{
+        font-size: 13px;
+      }
+
+      input[type=submit] {
+        margin-left: 6%;
+    }
+
+
+  }
 
 
 /* Gallery - Khalil */
@@ -922,17 +1053,24 @@ margin:14px;
 
 #admin_nav-items{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding:0;
 }
 
 .admin_nav-btn{
   padding: .4em;
+  border-radius: 15px;
+  margin-top: 2em;
+}
+
+#admin_nav-items li button:hover{
+background: #8E0754;
+color:#767575;
 }
 
 .fas:hover{
-  color:red;
+  color:#8E0754;
 }
-
 
 
   /* FOOTER */
@@ -966,3 +1104,29 @@ margin:14px;
     color: white !important;
     font-style: normal !important;
   }
+
+.table th,.table td{
+  color:#767575;
+}
+
+input#monImage{
+  height:auto;
+}
+
+button#monBoutonRose{
+  background: #8E0754;
+  color:#fff;
+}
+
+/* CONNEXION.PHP */
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #720442 !important;
+  border-color: #5a0133 !important;
+}
+
+.btn-primary {
+  border-color: #3a0121 !important;
+  background-color: #8E0754 !important;
+}

@@ -3,7 +3,14 @@ require('assets/head.php')
 ?>
 
 
+<?php
+if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
+    echo "<h1>Bienvenue sur l'espace administration</h1>";
+} else {
+   
+}
 
+?>
 <!--Slider--> 
 <div id="carousel">
 
@@ -32,18 +39,24 @@ require('assets/head.php')
                 <p>════════════♫════════════</p>
             </div>
             <div>
+
             <p>Vous aimez le théâtre, la bande dessinée, la peinture, la sculpture, les courts métrages, les comédies musicales...</p>
+                <p>Vous aimez le théâtre, la bande dessinée, la peinture, la sculpture, les courts métrages, les comédies musicales...</p>
+
                 <p>Vous êtes au bon endroit !!!!</p>
                 <p>Découvrez à travers ce site l'univers complet de Patrick DAY.</p>
                 <p>Comédien ,metteur en scène, écrivain, illustrateur, peintre, sculpteur... Allez à la rencontre d'un artiste à multiples facettes.</p>
                 <p>Regardez les principales archives de sa carrière en ligne.</p>
                 <p>Vous voulez en savoir plus, son travail vous intéresse ?? Alors <a href="contact.php">contactez-le</a>.</p>
+
             </div>
     </div>
 
     <div class="stext">
             <div>
-            <h4>Contenu du site</h4>
+                
+                <h4>Contenu du site</h4>
+
                 <p>════════════♫════════════</p>
             </div>
             <div>
@@ -56,6 +69,7 @@ require('assets/head.php')
             </div>
     </div>
 </div>
+
 <?php
 require('assets/footer.php')
 ?>
