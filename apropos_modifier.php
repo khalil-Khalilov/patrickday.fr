@@ -87,7 +87,7 @@ if(!empty($_POST['formulaire_envoyer'])){
               $extensions_autorisees = ['JPG', 'jpg', 'jpeg', 'png', 'gif'];
 
               if(in_array($extension_upload, $extensions_autorisees)){
-                $destination = "media/images/".$infofichier['filename'].time().'.'.$extension_upload;
+                $destination = "media/images/images_modifiées/".$infofichier['filename'].time().'.'.$extension_upload;
     
                 move_uploaded_file($_FILES['monImage']['tmp_name'], $destination);
               }
