@@ -1,5 +1,5 @@
 
-      <div class="kh-container" id="">
+      <div class="kh-container" id="apropos_admin">
         <ul id="admin_nav-items">
           <a href="apropos_afficher.php?id=6" class="admin_nav-btn">Texte "QUI SUIS JE"</a>
           <a href="apropos_afficher.php?id=5"  class="admin_nav-btn">Photo "QUI SUIS JE"</a>
