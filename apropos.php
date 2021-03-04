@@ -62,17 +62,17 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
 
   <?php $categories=$pdo->query('SELECT * FROM categorie_apropos');
         while($donnees=$categories->fetch()){
-        ?>
-          <div class="ContainerApropos" id="<?=$donnees['nom_categorie'];?>">
-            <h1><?=$donnees['titre_categorie'];?></h1>
-            <p>════════════♫════════════</p>
-            <ul>
-              <li><a href="index.php" ><em>Accueil</em></a></li>
-              <li><a href="apropos.php" style="color:#767575;"><em>/ A propos</em></a></li>
-            </ul>
-          </div>
+          if ($donnees['id']<=4){?>
+            <div class="ContainerApropos" id="<?=$donnees['nom_categorie'];?>">
+              <h1><?=$donnees['titre_categorie'];?></h1>
+              <p>════════════♫════════════</p>
+              <ul>
+                <li><a href="index.php" ><em>Accueil</em></a></li>
+                <li><a href="apropos.php" style="color:#767575;"><em>/ A propos</em></a></li>
+              </ul>
+            </div>
 
-          <div class="ContainerApropos">
+            <div class="ContainerApropos">
 
               <ul class="Clisteimages">
                 <?php $requete = "SELECT * FROM images_categorie WHERE id_categorie = :id_categorie";
@@ -97,9 +97,9 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
                 <div id="caption"></div>
               </div>
     
-          </div>  
-
-  <?php } ?>
+            </div>  
+    <?php }
+        } ?>
 
 <?php
 require('assets/footer.php');
