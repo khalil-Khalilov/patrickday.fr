@@ -42,7 +42,7 @@ if(!empty($_GET['suppr'])){
 
         if(!empty($_FILES['monImage']) && $_FILES['monImage']['error'] == 0){
 
-            if($_FILES['monImage']['size'] <= 1000000){
+            if($_FILES['monImage']['size'] <= 5000000){
                 $infofichier = pathinfo($_FILES['monImage']['name']);
                 $extension_upload = $infofichier['extension'];
     

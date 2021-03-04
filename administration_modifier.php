@@ -33,10 +33,10 @@ else{
 <?php
 if(!empty($_POST['formulaire_envoyer'])){
     if(empty($_POST['gallery_column'])){
-        $erreurs[] = "Vous n'avais pas choisi la colonne !";
+        $erreurs[] = "Vous n'avez pas choisi la colonne !";
     }
     if(empty($_POST['type_image'])){
-        $erreurs[] = "Vous n'avais pas choisi le type d'image !";
+        $erreurs[] = "Vous n'avez pas choisi le type d'image !";
     }
 
     if(count($erreurs) === 0){
@@ -57,7 +57,7 @@ if(!empty($_POST['formulaire_envoyer'])){
             }
         }
         else{
-            $erreurs[] = 'La taille du fichier depasse 1 Mo !';
+            $erreurs[] = 'La taille du fichier dépasse 1 Mo !';
         }
 
         $sql = ('UPDATE `images_categorie` SET `adresse_image`=:adresse_image,`titre_image`=:titre_image, `gallery_column`=:gallery_column, 
@@ -84,10 +84,6 @@ if(!empty($_POST['formulaire_envoyer'])){
 }
 
 ?>
-
-
-
-
 
 <!-- AFFICHAGE D'ERREUR -->
 <?php 
