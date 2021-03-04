@@ -62,7 +62,7 @@ if(!empty($_POST['pseudonyme']) && !empty($_POST['mot_de_passe'])) {
         <input type="password" class="form-control" name="mot_de_passe" id="mot_de_passe">
     </div>
     <br/>
-    <button type="submit" class="btn btn-primary">Valider</button>
+    <button type="submit" class="btn" id="monBoutonRose">Valider</button>
     </form>
     <br/>
 </div>
