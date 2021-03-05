@@ -1,75 +1,48 @@
 <?php
 require('assets/head.php');
-//header("refresh:3;url=https://google.com");
 ?>
 
 <?php
 if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
-    echo "<h1>Bienvenue sur l'espace administration</h1><br/>";
+    echo "Bienvenue sur l'administration.";
 } else {
     die("PAS DE HACK");
 }
+
 ?>
 
 <?php
-if(!empty($_GET['modifier'])){
-    $modifier = (int)$_GET['modifier'];
-
-    $sql = ('SELECT * FROM `images_categorie` WHERE id = :id');
-
-    $req = $pdo->prepare($sql);
-
-    $resultat = $req->execute([
-        'id' => $modifier
-    ]);
-
-    $donnees = $req->fetch();
-}
-else{
-    die('ERREUR 404');
-}
-?>
-
-<?php
-
-var_dump($_POST);
-
-if(!empty($_POST['formulaire_envoyer'])){
-    if(empty($_POST['gallery_column'])){
-        $erreurs[] = "Vous n'avez pas choisi la colonne !";
-    }
-    if(empty($_POST['type_image'])){
-        $erreurs[] = "Vous n'avez pas choisi le type d'image !";
-    }
-
-    if(count($erreurs) === 0){
+    if(!empty($_POST['type_image']) && !empty($_POST['gallery_column']) && !empty($_POST['titreImage'])){
 
         $type_image = htmlspecialchars($_POST['type_image']);
         $gallery_column = (int)$_POST['gallery_column'];
         $titreImage = htmlspecialchars($_POST['titreImage']);
-        
-        if($_FILES['monImage']['size'] <= 5000000){
-            $infofichier = pathinfo($_FILES['monImage']['name']);
-            $extension_upload = $infofichier['extension'];
-            $extensions_autorisees = ['JPG', 'jpg', 'jpeg', 'png', 'gif'];
 
-            if(in_array($extension_upload, $extensions_autorisees)){
-                $destination = "media/img/".$infofichier['filename'].time().'.'.$extension_upload;
+        if(!empty($_FILES['monImage']) && $_FILES['monImage']['error'] == 0){
+
+            if($_FILES['monImage']['size'] <= 5000000){
+                $infofichier = pathinfo($_FILES['monImage']['name']);
+                $extension_upload = $infofichier['extension'];
     
-                move_uploaded_file($_FILES['monImage']['tmp_name'], $destination);
-            }
-            else{
-                echo '<div class="alert alert-danger" role="alert">L\'extension d\'image n\'est pas autorisé !</div>';
+                $extensions_autorisees = ['JPG', 'jpg', 'jpeg', 'png', 'gif'];
+    
+                if(in_array($extension_upload, $extensions_autorisees)){
+                    $destination = "media/img/".$infofichier['filename'].time().'.'.$extension_upload;
+    
+                    move_uploaded_file($_FILES['monImage']['tmp_name'], $destination);
+                }
+                else{
+                    echo '<div class="alert alert-danger" role="alert">L\'extension d\'image n\'est pas autorisé !</div>';
+                }
             }
         }
         else{
             echo '<div class="alert alert-danger" role="alert">Le taille du fichier dépassé la limite permise, 
             esseyer de compresses l\'image ou convertire son extension en jpg, png ou webp</div>';
         }
-        
 
-        $sql = ('UPDATE `images_categorie` SET `adresse_image`=:adresse_image,`titre_image`=:titre_image, `gallery_column`=:gallery_column, 
-            `type_image`=:type_image WHERE id=:id');
+        $sql = ('INSERT INTO `images_categorie`(`adresse_image`, `titre_image`, `gallery_column`, `type_image`) 
+                VALUES (:adresse_image, :titre_image, :gallery_column, :type_image)');
 
         $req = $pdo->prepare($sql);
 
@@ -77,21 +50,21 @@ if(!empty($_POST['formulaire_envoyer'])){
             'adresse_image' => $destination,
             'titre_image' => $titreImage,
             'gallery_column' => $gallery_column,
-            'type_image' => $type_image,
-            'id' => $modifier
+            'type_image' => $type_image
         ]);
 
-        if($resultat) {
-            $success =  "L'article a bien été modifié.";
+        // VERIFICATION -> Si la variable "$resultat" est bien executé
+        if($resultat):
+            $success = "L'élément a bien été ajouté.";
             header("refresh:1;url=administration.php");
-        }
-        else {
-            $erreurs[] = "Une erreur est survenue.";
-        }
-    }
-}
+        else:
+            echo '<div class="alert alert-danger" role="alert">Une erreur est survenue. Veuillez réessayer.</div>';
+        endif;
+     }
 
 ?>
+
+
 
 <?php
     require('assets/nav_administration.php');
@@ -99,8 +72,8 @@ if(!empty($_POST['formulaire_envoyer'])){
 ?>
 
 
-<h2>Modifier l'image "<?=$donnees['titre_image'];?>" de la galerie</h2>
-<!-- FORMULAIRE -->
+<h1>Ajouter une image</h1>
+
 <form class="was-validated" action="" method="POST" enctype="multipart/form-data">
 
     <div class="mb-3">
@@ -135,10 +108,9 @@ if(!empty($_POST['formulaire_envoyer'])){
         
     </div>
 
-
     <div class="mb-3">
         <label for="titreImage" class="form-label">Titre Image:</label>
-        <input type="text" class="form-control " name="titreImage" id="titreImage" value="<?=$donnees['titre_image'];?>" required></input>
+        <input type="text" class="form-control " name="titreImage" id="titreImage" required></input>
         <div class="invalid-feedback">Tape le titre de l'image</div>
     </div>
 
@@ -147,28 +119,14 @@ if(!empty($_POST['formulaire_envoyer'])){
         <div class="invalid-feedback">Selectionner l'image</div>
     </div>
 
-    <input type="hidden" name="formulaire_envoyer" value="ghost_btn" />
-
     <div class="mb-3">
         <button class="btn btn-primary" type="submit" >Valider</button>
     </div>
 </form>
 
+
+
+
 <?php
 require('assets/footer.php');
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

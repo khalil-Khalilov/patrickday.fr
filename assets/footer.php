@@ -10,7 +10,6 @@
               
               <dl class="contact-list">
                 <dd><a href="mailto:stalkergame@sfr.fr">stalkergame@sfr.fr</a></dd>
-                <dd><a href="#scrollUp">Scroll Up Please</a></dd>
               </dl>
               
             </div>
