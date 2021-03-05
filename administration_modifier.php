@@ -5,7 +5,7 @@ require('assets/head.php');
 
 <?php
 if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
-    echo "Bienvenue sur l'administration.";
+    echo "<h1>Bienvenue sur l'espace administration</h1><br/>";
 } else {
     die("PAS DE HACK");
 }
@@ -36,10 +36,10 @@ var_dump($_POST);
 
 if(!empty($_POST['formulaire_envoyer'])){
     if(empty($_POST['gallery_column'])){
-        $erreurs[] = "Vous n'avais pas choisi la colonne !";
+        $erreurs[] = "Vous n'avez pas choisi la colonne !";
     }
     if(empty($_POST['type_image'])){
-        $erreurs[] = "Vous n'avais pas choisi le type d'image !";
+        $erreurs[] = "Vous n'avez pas choisi le type d'image !";
     }
 
     if(count($erreurs) === 0){
@@ -110,6 +110,7 @@ if(!empty($_POST['formulaire_envoyer'])){
 require('assets/affichage_erreur.php');
 ?>
 
+    <h2>Modifier l'image "<?=$donnees['titre_image'];?>" de la galerie</h2>
     <!-- FORMULAIRE -->
     <form class="was-validated" action="" method="POST" enctype="multipart/form-data">
 
@@ -145,6 +146,7 @@ require('assets/affichage_erreur.php');
             
         </div>
 
+
         <div class="mb-3">
             <label for="titreImage" class="form-label">Titre Image:</label>
             <input type="text" class="form-control " name="titreImage" id="titreImage" value="<?=$donnees['titre_image'];?>" required></input>
@@ -163,6 +165,19 @@ require('assets/affichage_erreur.php');
         </div>
     </form>
 
+
+        <!--Input UPLOAD IMAGE-->
+        <div class="form-group">
+            <label for="monImage">Image:</label>
+            <input type="file" name="monImage" id="monImage" value="" />
+        </div>
+
+        <input type="hidden" name="formulaire_envoyer" value="ghost_btn" />
+        <br/>
+        <button type="submit" class="btn" id="monBoutonRose">Valider</button>
+        
+    </form>  
+    <br/>
 <?php
 require('assets/footer.php');
 ?>

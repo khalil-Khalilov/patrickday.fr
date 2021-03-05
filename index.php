@@ -32,25 +32,32 @@ require('assets/head.php')
                 <p>════════════♫════════════</p>
             </div>
             <div>
-                <h1></h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis molestias ducimus nihil aspernatur rem nemo quidem odio quo perspiciatis eos dolorem tenetur accusantium repudiandae recusandae fugit mollitia modi, consectetur repellat.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit et perspiciatis quaerat exercitationem culpa ipsa commodi perferendis alias corrupti tenetur recusandae sint odit aut quis rem, est, error non.</p>
+                <p>Vous aimez le théâtre, la bande dessinée, la peinture, la sculpture, les courts métrages, les comédies musicales...</p>
+                <p>Vous êtes au bon endroit !!!!</p>
+                <p>Découvrez à travers ce site l'univers complet de Patrick DAY.</p>
+                <p>Comédien ,metteur en scène, écrivain, illustrateur, peintre, sculpteur... Allez à la rencontre d'un artiste à multiples facettes.</p>
+                <p>Regardez les principales archives de sa carrière en ligne.</p>
+                <p>Vous voulez en savoir plus, son travail vous intéresse ?? Alors <a href="contact.php">contactez-le</a>.</p>
+    
             </div>
     </div>
 
     <div class="stext">
             <div>
-                <h4>A propos</h4>
+                <h4>Contenu du site</h4>
                 <p>════════════♫════════════</p>
             </div>
             <div>
-                <h1>titre</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis molestias ducimus nihil aspernatur rem nemo quidem odio quo perspiciatis eos dolorem tenetur accusantium repudiandae recusandae fugit mollitia modi, consectetur repellat.</p>
-                <h1>titre</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis molestias ducimus nihil aspernatur rem nemo quidem odio quo perspiciatis eos dolorem tenetur accusantium repudiandae recusandae fugit mollitia modi, consectetur repellat.</p>
+            <h1><a href="apropos.php">A propos</a></h1>
+            <p>Découvrez le parcours artistique de Patrick DAY, ainsi toutes les facettes de son talent et les articles de presse.</p>
+            <h1><a href="gallery.php">Galeries</a></h1>  
+            <p>Retrouvez les principales illustrations de ses oeuvres, ses peintures, ses livres objets et quelques vidéos liées à ses films, courts métrages et comédies musicales.</p>
+            <h1><a href="contact.php">Contacts</a></h1>
+            <p>Des questions, des projets artistiques, ... ou tout simplement en voir plus ?? <br/>N'hésitez pas à remplir le formulaire de <a href="contact.php">contact</a>.</p>
             </div>
     </div>
 </div>
+
 <?php
 require('assets/footer.php')
 ?>

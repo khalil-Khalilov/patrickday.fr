@@ -111,12 +111,6 @@ $(function(){
         $('.list_of-video').removeClass('not_show-container');
     })
 
-
-
-
-
-
-
     //Function d'affichage d'image en click
     $('img').each(function(){
 

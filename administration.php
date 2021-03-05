@@ -28,7 +28,7 @@ if(!empty($_GET['suppr'])){
         header("refresh:1;url=administration.php");
     }
     else{
-        $erreurs[] = "Une erreur est survenue lors de la tentative de suppression de l'élément.";
+        echo '<div class="alert alert-danger" role="alert">Une erreur est survenue lors de la tentative de suppression de l\'élément.</div>';
     }
 }
 
@@ -145,7 +145,6 @@ require('assets/affichage_erreur.php');
 <div class="kh-container" id="">
     <ul id="admin_nav-items">
         <li><button id="btn-list_of-images" class="admin_nav-btn">Voir la liste des images</button></li>
-        <li><button id="btn-list_of-video" class="admin_nav-btn">Voir la liste des videos</button></li>
         <li><button id="btn-add_image" class="admin_nav-btn">Ajouter une image à la gallery</button></li>
         <li><button id="btn-modify-password" class="admin_nav-btn">Modifier Mot de passe</button></li>
     </ul>
@@ -239,23 +238,6 @@ require('assets/affichage_erreur.php');
 
 
 
-
-
-
-
-<!--Ajoute de video-->
-<div class="kh-container add_video not_show-container">
-    <h1>Ajouter une video</h1>
-    <!--<video src="media/paroles d'hommes.mp4" controls></video>-->
-</div>
-
-
-
-
-
-
-
-
 <!--Liste des images-->
 <div class="kh-container list_of-images ">
     <a href="#scrollDown">Scroll Down Please</a>
@@ -304,15 +286,6 @@ require('assets/affichage_erreur.php');
         </table>
 
     </div>
-</div>
-
-
-
-
-
-<!--Liste des videos-->
-<div class="kh-container list_of-video not_show-container">
-    <h1>Liste des videos</h1>
 </div>
 
 

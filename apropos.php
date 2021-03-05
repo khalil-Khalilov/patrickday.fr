@@ -1,6 +1,12 @@
 <?php
-require('assets/head.php')
-?>
+require('assets/head.php');
+
+if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
+     echo "<h1>Bienvenue sur l'espace administration</h1>";
+     echo "<p>Vous pouvez ajouter, modifier, supprimer des éléments de cette page en choisissant la bonne catégorie.</p>"
+    ?>
+    <?php require('assets/headAdminApropos.php');?>
+<?php }?>
 
   <div class="ContainerApropos">
     <h1>A PROPOS</h1>
@@ -28,15 +34,16 @@ require('assets/head.php')
     <div class="Contenugauche">
       <h1>QUI </h1>
       <p>════════════♫════════════</p>
-      <img src="media\images/Patrick Day.jpg" alt="" class="Cphoto"/>
-      <p class="Cpresentation">
-        Après le Conservatoire d’art dramatique de Nancy et en alternance à l’Ecole des Beaux-Arts, je poursuis plusieurs formations à l’écriture filmique et mise-en scène. Je réalise plusieurs courts-métrages, et obtiens le grand prix du court-métrage pour « Ira Dei ». J' écris et réalise ensuite le long-métrage « Désordres ».
-        J' enseigne et donne des cours de théâtre et prépare les jeunes comédiens pour le concours d’entrée du TNS.
-        Je suis l’auteur d’ouvrages divers dont plusieurs romans et pièces de théâtre. 
-        Je suis également enseignant théâtre pour les jeunes enfants pour la Communauté de Communes de Ribeauvillé. 
-        Plasticien, j'ai été représenté en son temps par la galerie du Rhin et la galerie Broglin de Colmar.
-        J'ai réalisé plusieurs spectacles que j'ai écrit et mis en scène (Théâtre-dansé et pièces de théâtre avec différentes troupes au cours des années précédentes).
-      </p>
+      <?php $sql = "SELECT * FROM images_categorie WHERE id_categorie = 5";
+            $photo = $pdo->prepare($sql);
+            $photo->execute();
+            $presentationPhoto=$photo->fetch();?>
+      <img src="<?=$presentationPhoto['adresse_image'];?>" alt="" class="Cphoto"/>
+      <?php $sql = "SELECT * FROM images_categorie WHERE id_categorie = 6";
+            $texte = $pdo->prepare($sql);
+            $texte->execute();
+            $presentationText=$texte->fetch();?>
+      <p class="Cpresentation"><?=$presentationText['adresse_image'];?></p>
     </div>
     <!--affichage uniquement en mode écran classique-->
     <div class="Contenudroit1">
@@ -55,17 +62,17 @@ require('assets/head.php')
 
   <?php $categories=$pdo->query('SELECT * FROM categorie_apropos');
         while($donnees=$categories->fetch()){
-        ?>
-          <div class="ContainerApropos" id="<?=$donnees['nom_categorie'];?>">
-            <h1><?=$donnees['titre_categorie'];?></h1>
-            <p>════════════♫════════════</p>
-            <ul>
-              <li><a href="index.php" ><em>Accueil</em></a></li>
-              <li><a href="apropos.php" style="color:#767575;"><em>/ A propos</em></a></li>
-            </ul>
-          </div>
+          if ($donnees['id']==='1' || $donnees['id']==='2' || $donnees['id']==='3' || $donnees['id']==='4'){ ?>
+            <div class="ContainerApropos" id="<?=$donnees['nom_categorie'];?>">
+              <h1><?=$donnees['titre_categorie'];?></h1>
+              <p>════════════♫════════════</p>
+              <ul>
+                <li><a href="index.php" ><em>Accueil</em></a></li>
+                <li><a href="apropos.php" style="color:#767575;"><em>/ A propos</em></a></li>
+              </ul>
+            </div>
 
-          <div class="ContainerApropos">
+            <div class="ContainerApropos">
 
               <ul class="Clisteimages">
                 <?php $requete = "SELECT * FROM images_categorie WHERE id_categorie = :id_categorie";
@@ -84,16 +91,16 @@ require('assets/head.php')
                 <span class="close">&times;</span>
 
                 <!-- Modal Content (The Image) -->
-                <img src=""class="modal-content" id="ModalImg">
+                <img src=""class="modal-image" id="ModalImg">
 
                 <!-- Modal Caption (Image Text) -->
                 <div id="caption"></div>
               </div>
     
-          </div>  
-
-  <?php } ?>
+            </div>  
+    <?php }
+        } ?>
 
 <?php
-require('assets/footer.php')
+require('assets/footer.php');
 ?>

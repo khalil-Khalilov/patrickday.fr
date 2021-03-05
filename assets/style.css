@@ -43,7 +43,7 @@ body {
 .Cnav {       /*div qui emglobe la partie grise de la barre de navigation*/
   width: 100%;
   height: 15vh;
-  margin-bottom: 7em;
+  margin-bottom: 4em;
   display: flex;
   background:#211F28;
   border-left: 8px solid black;
@@ -418,7 +418,7 @@ body {
   } /* the new scrollbar will have a flat appearance with the set background color */
 
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2); 
+    background-color:black; 
   } /* this will style the thumb, ignoring the track */
 
   ::-webkit-scrollbar-button {
@@ -614,10 +614,20 @@ margin:14px;
 
 .stext h1{
   font-size: 17px;
+  margin-top: 10%;
+}
+
+.stext h1 a{
+  color:#fff;
 }
 
 .stext p{
   color: #767575;
+  text-align:left;
+}
+
+.stext p a{
+  color:#8E0754;
 }
 
 .scontainer{
@@ -945,16 +955,29 @@ margin:14px;
 
 #admin_nav-items{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding:0;
 }
 
 .admin_nav-btn{
   padding: .4em;
+  border-radius: 15px;
+  margin-top: 2em;
+  color:#8E0754;
+  background: #fff;
+}
+
+
+#admin_nav-items li button:hover,#admin_nav-items a:hover{
+background: #8E0754;
+color:#767575;
 }
 
 .fas:hover{
-  color:red;
+  color:#8E0754;
 }
+
+
 
 
 /*Vidéo - Khalil*/
@@ -969,3 +992,30 @@ margin:14px;
   flex-direction: column;
   align-items: center;
 }
+
+
+
+.table th,.table td{
+  color:#767575;
+}
+
+input#monImage{
+  height:auto;
+}
+
+button#monBoutonRose{
+  background: #8E0754;
+  color:#fff;
+}
+
+#monBouton{
+  color:#8E0754;
+  padding:10px;
+  border-radius:10px;
+}
+
+#monBouton:hover{
+  background: #8E0754;
+  color: #767575;
+}
+
