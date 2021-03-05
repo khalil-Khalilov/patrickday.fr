@@ -91,7 +91,7 @@ $success = null;
   <div class="container">
     
     <!-- Barre de navigation-->
-      <div class="Cnavbar">
+      <div class="Cnavbar" id="scrollUp">
         <div class="Clogin"><a href="connexion.php"><em>log in</em></a><a href="deconnexion.php"><em>log out</em></a></div>
         <div class="Cnav">
           <div class="Cnomsite"><p>Patrick DAY</p></div>
@@ -111,7 +111,12 @@ $success = null;
    
 
 
+    <!--Btn scroll DOWN-->
+    <a href="#scrollDown"><i class="fas fa-arrow-circle-down btn_scroll-down"></i></a>
 
+
+    <!--Btn scroll UP-->
+    <a href="#scrollUp"><i class="fas fa-arrow-circle-up btn_scroll-up not_show-container"></i></a>
 
 
 
