@@ -113,7 +113,7 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px){
+@media screen and (min-width: 768px) and (max-width: 1200px){
   
   .Cnav {
     border-right: 8px solid black;
@@ -131,11 +131,12 @@ body {
   }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1200px){
 
   .Cnav {
     height:auto;
     display:block;
+    margin-bottom: 2em;
   }
 
   .Cnomsite p {
@@ -959,7 +960,7 @@ margin:14px;
   padding:0;
 }
 
-.admin_nav-btn{
+.admin_nav-btn,.admin_apropos-btn{
   padding: .4em;
   border-radius: 15px;
   margin-top: 2em;
@@ -999,5 +1000,66 @@ button#monBoutonRose{
 #monBouton:hover{
   background: #8E0754;
   color: #767575;
+}
+
+/*Admin-A propos*/
+
+.afficher_not_responsive {
+  display:block;
+}
+
+.afficher_responsive {
+  display:none;
+}
+
+@media screen and (max-width: 767px){
+
+  #barre_apropos_admin,#affichage_apropos_admin {
+    margin-bottom: 2em;
+  }
+
+  .titre_apropos_admin {
+    text-align: center;
+    font-size: 26px;
+  }
+
+  .text_apropos_admin {
+    align-items: center;
+    font-size: 12px;
+  }
+
+  #admin_nav-items.apropos_admin {
+    flex-direction: column;
+  }
+
+  .admin_apropos-btn {
+    text-align: center;
+    width:100%
+  }
+
+  .afficher_not_responsive {
+    display:none;
+  }
+  
+  .afficher_responsive {
+    display:block;
+  }
+}
+
+@media screen  and (min-width: 768px) and (max-width: 1200px){
+
+  #barre_apropos_admin,#affichage_apropos_admin {
+    margin-bottom: 1em;
+  }
+  #admin_nav-items.apropos_admin {
+    flex-wrap: wrap;
+  }
+
+  .admin_apropos-btn {
+      width:45%;
+      margin: 1em;
+      font-size: 12px;
+      text-align: center;
+  }
 }
 

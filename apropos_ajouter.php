@@ -1,11 +1,7 @@
 <?php
 require('assets/head.php');
-?>
 
-<?php if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
-     echo "<h1>Bienvenue sur l'espace administration</h1>";
-     echo "<p>Vous pouvez ajouter, modifier, supprimer des éléments de cette page en choisissant la bonne catégorie.</p>"
-    ?>
+ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){?>
     <?php require('assets/headAdminApropos.php');?>
 <?php }?>
 
