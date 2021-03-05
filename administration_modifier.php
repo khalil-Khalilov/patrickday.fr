@@ -31,6 +31,9 @@ else{
 ?>
 
 <?php
+
+var_dump($_POST);
+
 if(!empty($_POST['formulaire_envoyer'])){
     if(empty($_POST['gallery_column'])){
         $erreurs[] = "Vous n'avais pas choisi la colonne !";
@@ -44,8 +47,8 @@ if(!empty($_POST['formulaire_envoyer'])){
         $type_image = htmlspecialchars($_POST['type_image']);
         $gallery_column = (int)$_POST['gallery_column'];
         $titreImage = htmlspecialchars($_POST['titreImage']);
-
-        if($_FILES['monImage']['size'] <= 1000000){
+        
+        if($_FILES['monImage']['size'] <= 5000000){
             $infofichier = pathinfo($_FILES['monImage']['name']);
             $extension_upload = $infofichier['extension'];
             $extensions_autorisees = ['JPG', 'jpg', 'jpeg', 'png', 'gif'];
@@ -55,10 +58,15 @@ if(!empty($_POST['formulaire_envoyer'])){
     
                 move_uploaded_file($_FILES['monImage']['tmp_name'], $destination);
             }
+            else{
+                echo '<div class="alert alert-danger" role="alert">L\'extension d\'image n\'est pas autorisé !</div>';
+            }
         }
         else{
-            $erreurs[] = 'La taille du fichier depasse 1 Mo !';
+            echo '<div class="alert alert-danger" role="alert">Le taille du fichier dépassé la limite permise, 
+            esseyer de compresses l\'image ou convertire son extension en jpg, png ou webp</div>';
         }
+        
 
         $sql = ('UPDATE `images_categorie` SET `adresse_image`=:adresse_image,`titre_image`=:titre_image, `gallery_column`=:gallery_column, 
             `type_image`=:type_image WHERE id=:id');
@@ -75,7 +83,7 @@ if(!empty($_POST['formulaire_envoyer'])){
 
         if($resultat) {
             $success =  "L'article a bien été modifié.";
-            header("refresh:3;url=index.php");
+            header("refresh:1;url=administration.php");
         }
         else {
             $erreurs[] = "Une erreur est survenue.";
@@ -85,70 +93,75 @@ if(!empty($_POST['formulaire_envoyer'])){
 
 ?>
 
+<!--Btns de navigation-->
+<div class="kh-container" id="">
+    <ul id="admin_nav-items">
+        <li><button id="btn-list_of-images" class="admin_nav-btn">Voir la liste des images</button></li>
+        <li><button id="btn-list_of-video" class="admin_nav-btn">Voir la liste des videos</button></li>
+        <li><button id="btn-add_image" class="admin_nav-btn">Ajouter une image à la gallery</button></li>
+        <li><button id="btn-add_video" class="admin_nav-btn">Ajouter une video à la gallery</button></li>
+        <li><button id="btn-modify-password" class="admin_nav-btn">Modifier Mot de passe</button></li>
+    </ul>
+</div>
 
 
 
-
-<!-- AFFICHAGE D'ERREUR -->
-<?php 
-    if($success) {
-        echo '<div class="alert alert-success" role="alert">'.$success.'</div>';
-    }
-
-    if(count($erreurs) > 0) {
-        foreach($erreurs as $err) {
-            echo '<div class="alert alert-danger" role="alert">'.$err.' </div>';
-        }
-    }
+<?php
+require('assets/affichage_erreur.php');
 ?>
 
     <!-- FORMULAIRE -->
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form class="was-validated" action="" method="POST" enctype="multipart/form-data">
 
-        <!--Button Select Type-->
-        <select class="form-select" aria-label="Select picture type" name="type_image">
-            <option selected>Selectionner le type d'image</option>
-            <option value="Dessin">Dessin</option>
-            <option value="Peinture">Peinture</option>
-        </select>
-
-        <!--Button RADIOS-->
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" value="1" name="gallery_column" id="gallery_column1">
-            <label class="form-check-label"  for="gallery_column1">1</label>
+        <div class="mb-3">
+            <select class="form-select" required aria-label="Select picture type"  name="type_image">
+                <option value="">Selectionner le type d'image</option>
+                <option value="Dessin">Dessin</option>
+                <option value="Peinture">Peinture</option>
+                <option value="Sculpture">Sculpture</option>
+                <option value="Livre Object">Livre Object</option>
+            </select>
+            <div class="invalid-feedback">Selectionner le type d'image</div>
         </div>
 
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" value="2" name="gallery_column" id="gallery_column2" >
-            <label class="form-check-label" for="gallery_column2">2</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="1" name="gallery_column" id="gallery_column1" required>
+            <label class="form-check-label" for="gallery_column1">Premier Colonne</label>
         </div>
 
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" value="3" name="gallery_column" id="gallery_column3">
-            <label class="form-check-label" for="gallery_column3">3</label>
+        <div class="form-check ">
+            <input class="form-check-input" type="radio" value="2" name="gallery_column" id="gallery_column2" required>
+            <label class="form-check-label" for="gallery_column2">Deuxième Colonne</label>
         </div>
 
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" value="4" name="gallery_column" id="gallery_column4">
-            <label class="form-check-label" for="gallery_column4">4</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="3" name="gallery_column" id="gallery_column3" required>
+            <label class="form-check-label" for="gallery_column3">Troisième Colonne</label>
         </div>
 
-        <!--Input TITRE IMAGE-->
-        <div class="form-group">
-            <label for="titreImage">Titre:</label>
-            <input type="text" class="form-control"  name="titreImage" id="titreImage" value="<?=$donnees['titre_image'];?>">
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" value="4" name="gallery_column" id="gallery_column4" required>
+            <label class="form-check-label" for="gallery_column4">Quatrième Colonne</label>
+            
         </div>
 
-        <!--Input UPLOAD IMAGE-->
-        <div class="form-group">
-            <label for="monImage">Image:</label>
-            <input type="file" name="monImage" id="monImage" />
+        <div class="mb-3">
+            <label for="titreImage" class="form-label">Titre Image:</label>
+            <input type="text" class="form-control " name="titreImage" id="titreImage" value="<?=$donnees['titre_image'];?>" required></input>
+            <div class="invalid-feedback">Tape le titre de l'image</div>
+        </div>
+
+        <div class="mb-3">
+            <input type="file" class="form-control" name="monImage" id="monImage" aria-label="monImage" required>
+            <div class="invalid-feedback">Selectionner l'image</div>
         </div>
 
         <input type="hidden" name="formulaire_envoyer" value="ghost_btn" />
 
-        <button type="submit" class="btn btn-primary">Valider</button>
-    </form>  
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit" >Valider</button>
+        </div>
+    </form>
 
 <?php
 require('assets/footer.php');
