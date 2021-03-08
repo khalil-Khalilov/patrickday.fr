@@ -60,7 +60,7 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){ ?>
   <?php $categories=$pdo->query('SELECT * FROM categorie_apropos');
         while($donnees=$categories->fetch()){
           if ($donnees['id']==='1' || $donnees['id']==='2' || $donnees['id']==='3' || $donnees['id']==='4'){ ?>
-            <div class="ContainerApropos" id="<?=$donnees['nom_categorie'];?>">
+            <div class="ContainerApropos wow animate__animated animate__fadeIn" id="<?=$donnees['nom_categorie'];?>">
               <h1><?=$donnees['titre_categorie'];?></h1>
               <p>════════════♫════════════</p>
               <ul>
@@ -69,7 +69,7 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){ ?>
               </ul>
             </div>
 
-            <div class="ContainerApropos">
+            <div class="ContainerApropos wow animate__animated animate__fadeIn">
 
               <ul class="Clisteimages">
                 <?php $requete = "SELECT * FROM images_categorie WHERE id_categorie = :id_categorie";

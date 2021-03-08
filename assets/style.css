@@ -986,7 +986,7 @@ input#monImage{
   height:auto;
 }
 
-button #monBoutonRose{
+button#monBoutonRose{
   background: #8E0754;
   color:#fff;
 }
@@ -995,6 +995,7 @@ button #monBoutonRose{
   color:#8E0754;
   padding:10px;
   border-radius:10px;
+  margin-bottom: 1em;
 }
 
 #monBouton:hover{
@@ -1047,6 +1048,8 @@ button #monBoutonRose{
   display:none;
 }
 
+/*Admin-A propos-Responsive*/
+
 @media screen and (max-width: 767px){
 
   #barre_apropos_admin,#affichage_apropos_admin {
@@ -1078,6 +1081,21 @@ button #monBoutonRose{
   
   .afficher_responsive {
     display:block;
+  }
+
+  .menu-card {
+    display:flex;
+    padding-left:0px;
+    margin:auto;
+  }
+
+  .card-title {
+    flex-grow: 1;
+    color:#767575;
+  }
+  
+  .lien-card {
+    padding-right:10px;
   }
 }
 
