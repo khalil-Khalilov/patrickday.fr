@@ -79,11 +79,11 @@ $i = 1;
                     
                     <td>
                         <a onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')" 
-                            href="administration.php?suppr=<?= $donnees['id']; ?>">
+                            href="administration.php?suppr=<?= $donnees['id']; ?>">Supprimer
                             <i class="fas fa-trash-alt"></i>
                             </a>
                         <a onclick="return confirm('Voulez-vous vraiment modifier cet élément ?')" 
-                        href="administration_modifier.php?modifier=<?= $donnees['id']; ?>">
+                        href="administration_modifier.php?modifier=<?= $donnees['id']; ?>">Modifier
                             <i class="fas fa-wrench"></i>
                         </a>
                     </td>

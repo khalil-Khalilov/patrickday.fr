@@ -84,6 +84,11 @@ $success = null;
 
     <!-- Integration de fichier CSS -->
     <link rel="stylesheet" href="assets/style.css?v=<?php echo time(); ?>">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>patrickday.fr</title>
   </head>
   <body>
@@ -91,10 +96,19 @@ $success = null;
   <div class="container">
     
     <!-- Barre de navigation-->
-      <div class="Cnavbar" id="scrollUp">
-        <div class="Clogin"><a href="connexion.php"><em>log in</em></a><a href="deconnexion.php"><em>log out</em></a></div>
+      <div class="Cnavbar">
+        <div class="Clogin">
+        <?php
+        if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
+    echo "<a href='deconnexion.php'><em>Se déconnecter</em></a>";
+    echo " <br /><a href='administration.php'><em> Administration</em></a>";
+    } else {
+      echo "<a href='connexion.php'><em>Se connecter</em></a>";
+    }
+    ?>
+      </div>
         <div class="Cnav">
-          <div class="Cnomsite"><p>Patrick DAY</p></div>
+          <div class="Cnomsite"><a href="index.php"><p>Patrick DAY</p></a></div>
           <div id="Cnavbarmenu">
             <ul class="Cmenu">
               <li id="Ca"><a href="index.php">ACCUEIL</a></li>

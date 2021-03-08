@@ -88,7 +88,7 @@ while($donnees = $req->fetch()){
 
 
 <div class="ContainerApropos">
-    <h1>Galeries</h1>
+    <h1>GALERIES</h1>
     <p>════════════♫════════════</p>
     <ul>
         <li><a href="index.php" ><em>Accueil</em></a></li>
