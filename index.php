@@ -49,8 +49,8 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
             </div>
             <div>
                 <p><?= $donnees['contenu'] ?></p>
-                <p><?= $donnees['contenu2'] ?></p>
-                <p><?= $donnees['contenu3'] ?></p>
+                <p><?= $donnees['second_contenu'] ?></p>
+                <p><?= $donnees['troisieme_contenu'] ?></p>
 
             </div>
     </div>
@@ -76,9 +76,9 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
                     <h1><a href="apropos.php">A propos</a></h1>
                     <p><?= $donnees['contenu'] ?></p>
                     <h1><a href="gallery.php">Galeries</a></h1>  
-                    <p><?= $donnees['contenu2'] ?></p>
+                    <p><?= $donnees['second_contenu'] ?></p>
                     <h1><a href="contact.php">Contacts</a></h1>
-                    <p><?= $donnees['contenu3'] ?></p>
+                    <p><?= $donnees['troisieme_contenu'] ?></p>
                     </div>
             </div>
         </div>

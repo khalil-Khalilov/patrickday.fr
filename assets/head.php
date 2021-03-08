@@ -123,7 +123,12 @@ $success = null;
     <!--Fin Barre de navigation-->
 
 
+    <!--Btn scroll DOWN-->
+    <a href="#scrollDown"><i class="fas fa-arrow-circle-down btn_scroll-down"></i></a>
 
+
+    <!--Btn scroll UP-->
+    <a href="#scrollUp"><i class="fas fa-arrow-circle-up btn_scroll-up not_show-container"></i></a>
 
 
 

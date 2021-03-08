@@ -1,75 +1,71 @@
 $(function(){
-
+    
     //Btn Dessin
     $('#category-dessin').on('click', function(){
         $('.gallery-container-dessin').removeClass('not_show-container');
         $('.gallery-container-peintures').addClass('not_show-container');
+        $('.gallery-container-sculpture').addClass('not_show-container');
+        $('.gallery-container-livreObject').addClass('not_show-container');
+        $('.gallery-container-video').addClass('not_show-container');
+
 
         $('.gallery-img').addClass('animate__animated animate__zoomIn');
-    })
+    });
 
 
     //Btn Peintures
     $('#category-peintures').on('click', function(){
-        $('.gallery-container-peintures').removeClass('not_show-container');
         $('.gallery-container-dessin').addClass('not_show-container');
+        $('.gallery-container-peintures').removeClass('not_show-container');
+        $('.gallery-container-sculpture').addClass('not_show-container');
+        $('.gallery-container-livreObject').addClass('not_show-container');
+        $('.gallery-container-video').addClass('not_show-container');
 
 
         $('.gallery-img').addClass('animate__animated animate__zoomIn');
-    })
+    });
 
 
 
 
-    //Btn Modify Password
-    $('#btn-modify-password').on('click', function(){
-        
-        $('.formulaire_modify-password').removeClass('not_show-container');
-        $('.add_image').addClass('not_show-container');
-        $('.add_video').addClass('not_show-container');
-        $('.list_of-images').addClass('not_show-container');
-        $('.list_of-video').addClass('not_show-container');
-    })
+    //Btn Sculpture
+    $('#category-sculpture').on('click', function(){
+        $('.gallery-container-dessin').addClass('not_show-container');
+        $('.gallery-container-peintures').addClass('not_show-container');
+        $('.gallery-container-sculpture').removeClass('not_show-container');
+        $('.gallery-container-livreObject').addClass('not_show-container');
+        $('.gallery-container-video').addClass('not_show-container');
 
-    //Btn ADD img
-    $('#btn-add_image').on('click', function(){
-    
-        $('.formulaire_modify-password').addClass('not_show-container');
-        $('.add_image').removeClass('not_show-container');
-        $('.add_video').addClass('not_show-container');
-        $('.list_of-images').addClass('not_show-container');
-        $('.list_of-video').addClass('not_show-container');
-    })
 
-    //Btn ADD video
-    $('#btn-add_video').on('click', function(){
-        
-        $('.formulaire_modify-password').addClass('not_show-container');
-        $('.add_image').addClass('not_show-container');
-        $('.add_video').removeClass('not_show-container');
-        $('.list_of-images').addClass('not_show-container');
-        $('.list_of-video').addClass('not_show-container');
-    })
+        $('.gallery-img').addClass('animate__animated animate__zoomIn');
+    });
 
-    //Btn List of image
-    $('#btn-list_of-images').on('click', function(){
-        
-        $('.formulaire_modify-password').addClass('not_show-container');
-        $('.add_image').addClass('not_show-container');
-        $('.add_video').addClass('not_show-container');
-        $('.list_of-images').removeClass('not_show-container');
-        $('.list_of-video').addClass('not_show-container');
-    })
 
-    //Btn List of video
-    $('#btn-list_of-video').on('click', function(){
-        
-        $('.formulaire_modify-password').addClass('not_show-container');
-        $('.add_image').addClass('not_show-container');
-        $('.add_video').addClass('not_show-container');
-        $('.list_of-images').addClass('not_show-container');
-        $('.list_of-video').removeClass('not_show-container');
-    })
+    //Btn Livre object
+    $('#category-livreObject').on('click', function(){
+        $('.gallery-container-dessin').addClass('not_show-container');
+        $('.gallery-container-peintures').addClass('not_show-container');
+        $('.gallery-container-sculpture').addClass('not_show-container');
+        $('.gallery-container-livreObject').removeClass('not_show-container');
+        $('.gallery-container-video').addClass('not_show-container');
+
+
+        $('.gallery-img').addClass('animate__animated animate__zoomIn');
+    });
+
+
+    //Btn Videos
+    $('#category-videos').on('click', function(){
+        $('.gallery-container-dessin').addClass('not_show-container');
+        $('.gallery-container-peintures').addClass('not_show-container');
+        $('.gallery-container-sculpture').addClass('not_show-container');
+        $('.gallery-container-livreObject').addClass('not_show-container');
+        $('.gallery-container-video').removeClass('not_show-container');
+
+
+        $('.gallery-img').addClass('animate__animated animate__zoomIn');
+    });
+
 
     //Function d'affichage d'image en click
     $('img').each(function(){
@@ -88,7 +84,9 @@ $(function(){
         $('span').on('click', function(){
             $('#myModal').css('display', 'none');
         })
-    })
+    });
+
+
 
     /* Carousel */
     $('#carousel img').eq(0).css('display', 'block');
@@ -113,7 +111,7 @@ $(function(){
             $('#carousel img').eq(i).css('display', 'block');
             slader();
         }, 4500)
-    }
+    };
 
 
     $('.next').on('click', function(){
@@ -131,7 +129,7 @@ $(function(){
         }
 
         console.log(i);
-    })
+    });
 
 
    $('.prev').on('click', function(){
@@ -151,7 +149,7 @@ $(function(){
       }
       
       console.log(i);
-   })
+   });
 
    slader();
 
@@ -159,9 +157,44 @@ $(function(){
 
    /* Scroll horizontal */ 
    $(document).ready(function () {
-    if (!$.browser.webkit) {
-        $('.Clisteimages').jScrollPane();
-    }
-});
+        if (!$.browser.webkit) {
+            $('.Clisteimages').jScrollPane();
+        }
+
+        //Empêche l'affichage de button telecharger sur la console de video
+        $('video').attr('controlsList', 'nodownload');
+    });
+
+    /* Btn Scroll Up */ 
+    $(window).scroll(function() {    
+        var scrollPosition = $(window).scrollTop();
+
+        if (scrollPosition < 1500) {
+            $('.btn_scroll-up').removeClass("animate__animated animate__fadeInRight");
+            $('.btn_scroll-up').addClass("animate__animated animate__fadeOutLeft");
+        }
+        else{
+            $('.btn_scroll-up').removeClass("not_show-container");
+            $('.btn_scroll-up').removeClass("animate__animated animate__fadeOutLeft");
+            $('.btn_scroll-up').addClass("animate__animated animate__fadeInRight");
+        }
+    });
+
+
+    /* Btn Scroll DOWN */ 
+    $(window).scroll(function() {    
+        var scrollPosition = $(window).scrollTop();
+
+        if (scrollPosition > 20550) {
+            $('.btn_scroll-down').removeClass("animate__animated animate__fadeInLeft");
+            $('.btn_scroll-down').addClass("animate__animated animate__fadeOutRight");
+        }
+        else{
+            $('.btn_scroll-down').removeClass("animate__animated animate__fadeOutRight");
+            $('.btn_scroll-down').addClass("animate__animated animate__fadeInLeft");
+        }
+
+    });
+
 })
 

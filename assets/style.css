@@ -1074,7 +1074,6 @@ color:#767575;
   color:#8E0754;
 }
 
-
   /* FOOTER */
 
   footer{
@@ -1107,6 +1106,23 @@ color:#767575;
     font-style: normal !important;
   }
 
+
+/*Vidéo - Khalil*/
+.inner-container-video video {
+  width: 50em;
+  margin: 1em 0em 11em 0em;
+}
+
+.inner-container-video{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
 .table th,.table td{
   color:#767575;
 }
@@ -1115,7 +1131,7 @@ input#monImage{
   height:auto;
 }
 
-button#monBoutonRose{
+button #monBoutonRose{
   background: #8E0754;
   color:#fff;
 }
@@ -1144,3 +1160,23 @@ button#monBoutonRose{
   color: #767575;
 }
 
+
+/*Btn Scroll UP - Khalil*/
+.btn_scroll-up{
+  font-size: 4em;
+  color: #e64141;
+  z-index: 999;
+  position: fixed;
+  top: 88%;
+  right: 25px;
+}
+
+/*Btn Scroll DOWN - Khalil*/
+.btn_scroll-down{
+  font-size: 4em;
+  color: #e64141;
+  z-index: 999;
+  position: fixed;
+  top: 88%;
+  left: 25px;
+}
