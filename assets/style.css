@@ -22,6 +22,7 @@ body {
 
 .Clogin {    /*div qui emglobe la partie noire de la barre de navigation*/
   background:black;
+  min-height: 10px;
   height:auto;
   text-align: right;
   font-size: 10px;
@@ -100,73 +101,7 @@ body {
 
 
 
-@media screen and (max-width: 767px){
-  
-    .Cnav {
-      border-right: 6px solid black;
-      border-left: 6px solid black;
-      border-bottom: 6px solid black;
-    }
-    .Cnav .Cnomsite {
-      font-size: 30px;
-      border-bottom: 2px solid #8E0754;
-    }
 
-    #Ca {
-      font-size: 10px;
-      border-bottom: 2px solid #8E0754;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1200px){
-  
-    .Cnav {
-      border-right: 8px solid black;
-      border-left: 8px solid black;
-      border-bottom: 8px solid black;
-    }
-    .Cnav .Cnomsite {
-      font-size: 34px;
-      border-bottom: 4px solid #8E0754;
-    }
-
-    #Ca {
-      font-size: 12px;
-      border-bottom: 4px solid #8E0754;
-    }
-}
-
-@media screen and (max-width: 1200px){
-
-    .Cnav {
-      height:auto;
-      display:block;
-    }
-
-    .Cnomsite p {
-      margin:0px;
-    }
-
-    .Cnav #Cnavbarmenu {
-      border-right: 0px;
-    }
-
-    .Cmenu {     
-      display:center;
-      padding:0px;
-      margin-bottom: 0px;
-    }
-
-    #Ca {
-      height:auto;
-      border-left: 0px solid black;
-      padding:0px;
-    }
-
-    .Clogin {  
-      font-size: 6px;
-    }
-}
 
 
 
@@ -212,86 +147,7 @@ margin:14px;
   width: 100%;
 }
 
-@media all and (max-width: 767px){
 
-      #souheil-formulaire{
-      padding: 80px 35px;
-      }
-
-      input[type=submit]{
-      margin-left: 18%;
-      }
-
-      .scontainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    .stext {
-      text-align: center;
-      width: 100%;
-      margin-top:4em;
-      border: solid black 5px;
-      padding: 30px;
-      border-radius: 15px;
-      background-color: #2b262d;
-    }
-
-    #carousel{
-      display: none;
-    }
-
-}
-
-@media screen and (min-device-width : 768px) and (max-device-width : 1024px){
-  input[type=submit] {
-  
-    margin-left: 19%;
-  }
-
-
-    .stext {
-      width: 50%;
-      margin: 20px;
-  }
-
-  #carousel{
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1024px){ 
-
-  #carousel{
-    display: none;
-  }
-
-  .stext {
-    text-align: center;
-    width: 338px;
-    border: solid black 5px;
-    padding: 25px;
-    border-radius: 15px;
-    background-color: #2b262d;
-    margin: 23px;
-}
-}
-
-
-@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
-      .stext{
-        font-size: 13px;
-      }
-
-      input[type=submit] {
-        margin-left: 6%;
-    }
-
-
-  }
 
 /* CONTACT */
 
@@ -564,128 +420,6 @@ margin:14px;
   }
   /*fin zoom*/
 
-  @media screen and (min-width:360px)and (max-width:393px){
-
-    .Cphoto {
-      width: 32%;
-    }
-  }
-
-  @media screen and (min-width:394px)and (max-width:767px){
-
-    .Cphoto {
-      width: 29%;
-    }
-  }
-
-  @media screen and (min-width:768px) and (max-width: 1024px){
-  
-    .Capercu {
-      display:-webkit-inline-box;
-      display: -moz-inline-box;
-      display: inline-box;
-    }
-
-    .Capercu li a {
-      padding:10px;
-    }
-
-    .Cphoto {
-      width:14%;
-      padding-top: 0%;
-    }
-  }
-
-  @media screen  and (max-width: 1024px){
-
-    .ContainerApropos {
-      padding:2px;
-    }
-    .ContainerApropos h1 {
-      margin:0px;
-      font-size: 18px;
-    }
-
-    .ContainerApropos p,.Contenugauche p {
-      font-size: 12px;
-      margin:0px;
-    }
-
-    .Contenudroit2 p {
-      font-size: 12px;
-      margin:0px 0px 14px;
-    }
-
-    .ContainerApropos ul li a {
-      font-size:10px;
-    }
-  
-    .ContenuApropos {
-      display:block;
-    }
-
-    .Contenugauche,.Contenudroit2 {
-      width:100%;
-    }
-
-    .Contenugauche h1,.Contenudroit2 h1 {
-      font-size: 18px;
-      margin:0px;
-    }
-
-    .Contenugauche {
-      margin-bottom:2.5%;
-    }
-
-    .Contenudroit1 {
-      display:none;
-    }
-
-    .Contenudroit2{
-      padding:1px;
-      margin-bottom: 2.5%;
-      display:block;
-    }
-
-    .Capercu li a::before {
-      font-size: 15px;
-    }
-
-    .Capercu li a {
-      font-size: 12px;
-    }
-
-    .Capercu li {
-      height: auto;
-    }
-    
-    .ContainerApropos .Clisteimages li {
-      display:block;
-    }
-
-    .Cimage {
-      width:100%;
-      height:auto;
-    }
-
-    .Clisteimages { 
-      overflow-x: unset;
-      white-space:unset;
-    }
-
-    
-    .Clisteimages li img {
-      -webkit-transform: unset;
-      transform: unset;
-      -webkit-transition: unset;
-      transition: unset;
-    }
-  
-    .Clisteimages li:hover img {
-      -webkit-transform: unset;
-      transform: unset;
-    }
-  }
 
  
 
@@ -735,69 +469,6 @@ margin:14px;
   justify-content: space-around;
   width: 100%;
 }
-
-@media all and (max-width: 767px){
-
-      #souheil-formulaire{
-      padding: 80px 35px;
-      }
-
-      input[type=submit]{
-      margin-left: 18%;
-      }
-
-      .scontainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    .stext {
-      text-align: center;
-      width: 100%;
-      margin-top:4em;
-      border: solid black 5px;
-      padding: 30px;
-      border-radius: 15px;
-      background-color: #433e45;
-    }
-
-    #carousel{
-      display: none;
-    }
-
-}
-
-@media screen and (min-device-width : 768px) and (max-device-width : 1024px){
-  input[type=submit] {
-  
-    margin-left: 19%;
-  }
-
-
-    .stext {
-      width: 50%;
-      margin: 20px;
-  }
-
-  #carousel{
-    display: none;
-  }
-}
-
-@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
-      .stext{
-        font-size: 13px;
-      }
-
-      input[type=submit] {
-        margin-left: 6%;
-    }
-
-
-  }
 
 
 /* Gallery - Khalil */
@@ -930,12 +601,7 @@ margin:14px;
   cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
+
 
 
 /*Responsive Grid for Images*/
@@ -958,49 +624,6 @@ margin:14px;
   width: 100%;
 }
 
-@media screen and (max-width: 800px) {
-    .column {
-      flex: 50%;
-      max-width: 50%;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
-    }
-}
-
-@media all and (max-width: 767px){
-
-        #souheil-formulaire{
-        padding: 80px 35px;
-        }
-
-        input[type=submit]{
-        margin-left: 18%;
-        }
-
-        .scontainer {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-      }
-
-      .stext {
-        width: 100%;
-        margin-top:4em;
-        padding: 30px;
-      }
-
-      #carousel{
-        display: none;
-      }
-
-}
 
 
 /*Carousel - Khalil*/
@@ -1259,3 +882,432 @@ button#monBoutonRose{
 }
 
 
+@media screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  input[type=submit] {
+  
+  margin-left: 19%;
+  }
+  
+  
+  .stext {
+    width: 50%;
+    margin: 20px;
+  }
+  
+  #carousel{
+  display: none;
+  }
+  }
+  
+  @media screen and (max-width: 1024px){ 
+  
+  #carousel{
+  display: none;
+  }
+  
+  .stext {
+  text-align: center;
+  width: 338px;
+  border: solid black 5px;
+  padding: 25px;
+  border-radius: 15px;
+  background-color: #2b262d;
+  margin: 23px;
+  }
+  }
+  
+  
+  @media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
+    .stext{
+      font-size: 13px;
+    }
+  
+    input[type=submit] {
+      margin-left: 6%;
+  }
+  }
+  @media screen and (min-width:360px)and (max-width:393px){
+  
+    .Cphoto {
+      width: 32%;
+    }
+  }
+  
+  @media screen and (min-width:394px)and (max-width:767px){
+  
+    .Cphoto {
+      width: 29%;
+    }
+  }
+  
+  @media screen and (min-width:768px) and (max-width: 1024px){
+
+    .scrollBtns{
+      display: none;
+    }
+
+    #connexionAdmin{
+      display: none;
+    }
+
+    .inner-container-video video {
+      width: 35em;
+      margin: 1em 0em 8em 0em;
+    }
+  
+    .Capercu {
+      display:-webkit-inline-box;
+      display: -moz-inline-box;
+      display: inline-box;
+    }
+  
+    .Capercu li a {
+      padding:10px;
+    }
+  
+    .Cphoto {
+      width:14%;
+      padding-top: 0%;
+    }
+  }
+  
+  @media screen  and (max-width: 1024px){
+  
+    .ContainerApropos {
+      padding:2px;
+    }
+    .ContainerApropos h1 {
+      margin:0px;
+      font-size: 18px;
+    }
+  
+    .ContainerApropos p,.Contenugauche p {
+      font-size: 12px;
+      margin:0px;
+    }
+  
+    .Contenudroit2 p {
+      font-size: 12px;
+      margin:0px 0px 14px;
+    }
+  
+    .ContainerApropos ul li a {
+      font-size:10px;
+    }
+  
+    .ContenuApropos {
+      display:block;
+    }
+  
+    .Contenugauche,.Contenudroit2 {
+      width:100%;
+    }
+  
+    .Contenugauche h1,.Contenudroit2 h1 {
+      font-size: 18px;
+      margin:0px;
+    }
+  
+    .Contenugauche {
+      margin-bottom:2.5%;
+    }
+  
+    .Contenudroit1 {
+      display:none;
+    }
+  
+    .Contenudroit2{
+      padding:1px;
+      margin-bottom: 2.5%;
+      display:block;
+    }
+  
+    .Capercu li a::before {
+      font-size: 15px;
+    }
+  
+    .Capercu li a {
+      font-size: 12px;
+    }
+  
+    .Capercu li {
+      height: auto;
+    }
+    
+    .ContainerApropos .Clisteimages li {
+      display:block;
+    }
+  
+    .Cimage {
+      width:100%;
+      height:auto;
+    }
+  
+    .Clisteimages { 
+      overflow-x: unset;
+      white-space:unset;
+    }
+  
+    
+    .Clisteimages li img {
+      -webkit-transform: unset;
+      transform: unset;
+      -webkit-transition: unset;
+      transition: unset;
+    }
+  
+    .Clisteimages li:hover img {
+      -webkit-transform: unset;
+      transform: unset;
+    }
+  }
+
+  @media all and (max-width: 767px){
+  
+        #souheil-formulaire{
+        padding: 80px 35px;
+        }
+  
+        input[type=submit]{
+        margin-left: 18%;
+        }
+  
+        .scontainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+      }
+  
+      .stext {
+        text-align: center;
+        width: 100%;
+        margin-top:4em;
+        border: solid black 5px;
+        padding: 30px;
+        border-radius: 15px;
+        background-color: #433e45;
+      }
+  
+      #carousel{
+        display: none;
+      }
+  
+  }
+  
+  @media screen and (min-device-width : 768px) and (max-device-width : 1024px){
+    input[type=submit] {
+    
+      margin-left: 19%;
+    }
+  
+  
+      .stext {
+        width: 50%;
+        margin: 20px;
+    }
+  
+    #carousel{
+      display: none;
+    }
+  }
+  
+  @media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
+        .stext{
+          font-size: 13px;
+        }
+  
+        input[type=submit] {
+          margin-left: 6%;
+      }
+  
+  
+    }
+    @media screen and (max-width: 767px){
+  
+      .Cnav {
+        border-right: 6px solid black;
+        border-left: 6px solid black;
+        border-bottom: 6px solid black;
+      }
+      .Cnav .Cnomsite {
+        font-size: 30px;
+        border-bottom: 2px solid #8E0754;
+      }
+    
+      #Ca {
+        font-size: 10px;
+        border-bottom: 2px solid #8E0754;
+      }
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 1200px){
+    
+      .Cnav {
+        border-right: 8px solid black;
+        border-left: 8px solid black;
+        border-bottom: 8px solid black;
+      }
+      .Cnav .Cnomsite {
+        font-size: 34px;
+        border-bottom: 4px solid #8E0754;
+      }
+    
+      #Ca {
+        font-size: 12px;
+        border-bottom: 4px solid #8E0754;
+      }
+    }
+    
+    @media screen and (max-width: 1200px){
+    
+      .Cnav {
+        height:auto;
+        display:block;
+      }
+    
+      .Cnomsite p {
+        margin:0px;
+      }
+    
+      .Cnav #Cnavbarmenu {
+        border-right: 0px;
+      }
+    
+      .Cmenu {     
+        display:center;
+        padding:0px;
+        margin-bottom: 0px;
+      }
+    
+      #Ca {
+        height:auto;
+        border-left: 0px solid black;
+        padding:0px;
+      }
+    
+      .Clogin {  
+        font-size: 6px;
+      }
+    }
+    
+    @media all and (max-width: 767px){
+    
+      #souheil-formulaire{
+      padding: 80px 35px;
+      }
+    
+      input[type=submit]{
+      margin-left: 18%;
+      }
+    
+      .scontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .stext {
+      text-align: center;
+      width: 100%;
+      margin-top:4em;
+      border: solid black 5px;
+      padding: 30px;
+      border-radius: 15px;
+      background-color: #2b262d;
+    }
+    
+    #carousel{
+      display: none;
+    }
+    
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+      .modal-content {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      .column img{
+        margin-top: 8px;
+        vertical-align: middle;
+        margin-bottom: 3em;
+        width: 70%;
+      }
+
+        .column {
+          max-width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .column {
+          flex: 100%;
+        }
+    }
+
+    @media all and (max-width: 767px){
+
+      .scrollBtns{
+        display: none;
+      }
+
+      #connexionAdmin{
+        display: none;
+      }
+
+      .inner-container-video h4{
+        font-size: 1rem;
+      }
+
+
+      .inner-container-video video {
+        width: 20em;
+        margin: 1em 0em 6em 0em;
+      }
+
+      #kh-categories li{
+        margin-right: 1em;
+      }
+
+      #kh-categories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      #souheil-formulaire{
+      padding: 80px 35px;
+      }
+
+      input[type=submit]{
+      margin-left: 18%;
+      }
+
+      .scontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .stext {
+      width: 100%;
+      margin-top:4em;
+      padding: 30px;
+    }
+
+    #carousel{
+      display: none;
+    }
+}
