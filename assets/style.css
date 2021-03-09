@@ -118,7 +118,7 @@ body {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px){
+@media screen and (min-width: 768px) and (max-width: 1200px){
   
     .Cnav {
       border-right: 8px solid black;
@@ -136,7 +136,7 @@ body {
     }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1200px){
 
     .Cnav {
       height:auto;
@@ -1056,7 +1056,7 @@ margin:14px;
   padding:0;
 }
 
-.admin_nav-btn{
+.admin_nav-btn,.admin_apropos-btn{
   padding: .4em;
   border-radius: 15px;
   margin-top: 2em;
@@ -1107,22 +1107,6 @@ color:#767575;
   }
 
 
-/*Vidéo - Khalil*/
-.inner-container-video video {
-  width: 50em;
-  margin: 1em 0em 11em 0em;
-}
-
-.inner-container-video{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-
-
 .table th,.table td{
   color:#767575;
 }
@@ -1132,7 +1116,7 @@ input#monImage{
 }
 
 button#monBoutonRose{
-  background:#8E0754;
+  background: #8E0754;
   color:#fff;
 }
 
@@ -1154,6 +1138,7 @@ button#monBoutonRose{
   color:#8E0754;
   padding:10px;
   border-radius:10px;
+  margin-bottom: 1em;
 }
 
 #monBouton:hover{
@@ -1161,6 +1146,19 @@ button#monBoutonRose{
   color: #767575;
 }
 
+
+/*Vidéo - Khalil*/
+.inner-container-video video {
+  width: 50em;
+  margin: 1em 0em 11em 0em;
+}
+
+.inner-container-video{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /*Btn Scroll UP - Khalil*/
 .btn_scroll-up{
@@ -1181,3 +1179,84 @@ button#monBoutonRose{
   top: 88%;
   left: 25px;
 }
+
+
+/*Admin-A propos*/
+
+.afficher_not_responsive {
+  display:block;
+}
+
+.afficher_responsive {
+  display:none;
+}
+
+/*Admin-A propos-Responsive*/
+
+@media screen and (max-width: 767px){
+
+  #barre_apropos_admin,#affichage_apropos_admin {
+    margin-bottom: 2em;
+  }
+
+  .titre_apropos_admin {
+    text-align: center;
+    font-size: 26px;
+  }
+
+  .text_apropos_admin {
+    align-items: center;
+    font-size: 12px;
+  }
+
+  #admin_nav-items.apropos_admin {
+    flex-direction: column;
+  }
+
+  .admin_apropos-btn {
+    text-align: center;
+    width:100%
+  }
+
+  .afficher_not_responsive {
+    display:none;
+  }
+  
+  .afficher_responsive {
+    display:block;
+  }
+
+  .menu-card {
+    display:flex;
+    padding-left:0px;
+    margin:auto;
+  }
+
+  .card-title {
+    flex-grow: 1;
+    color:#767575;
+  }
+  
+  .lien-card {
+    padding-right:10px;
+  }
+}
+
+@media screen  and (min-width: 768px) and (max-width: 1200px){
+
+  #barre_apropos_admin,#affichage_apropos_admin {
+    margin-bottom: 1em;
+  }
+  #admin_nav-items.apropos_admin {
+    flex-wrap: wrap;
+  }
+
+  .admin_apropos-btn {
+      width:45%;
+      margin: 1em;
+      font-size: 12px;
+      text-align: center;
+  }
+}
+
+

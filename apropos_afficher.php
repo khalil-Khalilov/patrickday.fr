@@ -22,16 +22,13 @@ if(!empty($_GET['suppr'])){
     }
 }
 
-if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
-     $id=(int)$_GET['id'];
-     echo "<h1>Bienvenue sur l'espace administration</h1>";
-     echo "<p>Vous pouvez ajouter, modifier, supprimer des éléments de cette page en choisissant la bonne catégorie.</p>"
-    ?>
-    <?php require('assets/headAdminApropos.php');?>  
-<?php }?>
+    if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
+      $id=(int)$_GET['id'];?>
+      <?php require('assets/headAdminApropos.php');?>  
+    <?php }?>
 
-<!--Liste des images-->
-<div class="kh-container list_of-presse">
+
+<div class="kh-container" id="affichage_apropos_admin">
 <?php $sql = ('SELECT id, nom_categorie, titre_categorie FROM categorie_apropos WHERE id = :id');
             $titre=$pdo->prepare($sql);
             $titre->execute([
@@ -40,11 +37,13 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
             $categorie_titre=$titre->fetch();
       ?>
     <h2><?=$categorie_titre['titre_categorie']?></h2>
-    <div id="container">
+
+    <!--Affichage mode not responsive-->
+    <div class="afficher_not_responsive" id="container">
       <?php if ($categorie_titre['id']==='5' || $categorie_titre['id']==='6'){         
             }
             else{?>
-              <a href="apropos_ajouter.php" id="monBouton">Ajouter un nouvel élément</a>
+              <a href="apropos_ajouter.php" class="btn" id="monBouton">Ajouter un nouvel élément</a>
             <?php }?>
       <table  class="table table-secondary table-striped">
         <thead class="table">
@@ -65,7 +64,7 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
         $i = 1;
         while($donnees = $req->fetch()){
           ?>
-          <tbody>
+          <tbody class="wow animate__animated animate__fadeIn">
             <tr>
               <td> <?= $i++; ?> </td>  
               <td>
@@ -98,6 +97,46 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
         }
           ?>
       </table>
+    </div>
+
+  <!--Affichage en mode responsive-->  
+    <div class="afficher_responsive" id="container">
+    <?php if ($categorie_titre['id']==='5' || $categorie_titre['id']==='6'){         
+            }
+            else{?>
+              <a href="apropos_ajouter.php" class="btn" id="monBouton">Ajouter un nouvel élément</a><br/>
+            <?php }?>
+    <?php 
+        $sql = ('SELECT id, adresse_image, titre_image, id_categorie FROM images_categorie WHERE id_categorie = :id_categorie ');
+        $req = $pdo->prepare($sql); 
+        $req->execute([
+          'id_categorie'=>$id
+        ]);          
+        $i = 1;
+        while($donnees = $req->fetch()){
+          ?>
+          <div class="card mb-3">                  
+              <?php if ($id===6){ ?>
+                      <p style="color:#767575;"><?=$donnees['adresse_image'];?></p>
+             <?php  } 
+                    else{ ?>
+                      <img class="card-img-top" src="<?= $donnees['adresse_image'];?>" alt="<?= $donnees['titre_image'];?>" style="width:100%;"/></td>
+              <?php } ?>                                               
+              <div class="card-body">
+                <ul class="menu-card">
+                  <li class="card-title"><?=$donnees['titre_image'];?><li>
+                  <li class="lien-card"><a onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')" 
+                     href="apropos_afficher.php?suppr=<?= $donnees['id']; ?>">
+                     <i class="fas fa-trash-alt"></i></a>
+                  </li>
+                  <li class="lien-card"><a onclick="return confirm('Voulez-vous vraiment modifier cet élément ?')" 
+                    href="apropos_modifier.php?modifier=<?= $donnees['id']; ?>">
+                    <i class="fas fa-wrench"></i></a>
+                  </li>
+                </ul>
+              </div>                                            
+          </div>  
+  <?php }?>  
     </div>
 </div>
 

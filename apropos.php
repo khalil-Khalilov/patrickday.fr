@@ -1,12 +1,9 @@
 <?php
 require('assets/head.php');
 
-if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
-     echo "<h1>Bienvenue sur l'espace administration</h1>";
-     echo "<p>Vous pouvez ajouter, modifier, supprimer des éléments de cette page en choisissant la bonne catégorie.</p>"
-    ?>
-    <?php require('assets/headAdminApropos.php');?>
-<?php }?>
+if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){ ?>
+ <?php require('assets/headAdminApropos.php');?>
+ <?php }?>
 
   <div class="ContainerApropos">
     <h1>A PROPOS</h1>
@@ -63,7 +60,7 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
   <?php $categories=$pdo->query('SELECT * FROM categorie_apropos');
         while($donnees=$categories->fetch()){
           if ($donnees['id']==='1' || $donnees['id']==='2' || $donnees['id']==='3' || $donnees['id']==='4'){ ?>
-            <div class="ContainerApropos" id="<?=$donnees['nom_categorie'];?>">
+            <div class="ContainerApropos wow animate__animated animate__fadeIn" id="<?=$donnees['nom_categorie'];?>">
               <h1><?=$donnees['titre_categorie'];?></h1>
               <p>════════════♫════════════</p>
               <ul>
@@ -72,7 +69,7 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1){
               </ul>
             </div>
 
-            <div class="ContainerApropos">
+            <div class="ContainerApropos wow animate__animated animate__fadeIn">
 
               <ul class="Clisteimages">
                 <?php $requete = "SELECT * FROM images_categorie WHERE id_categorie = :id_categorie";
