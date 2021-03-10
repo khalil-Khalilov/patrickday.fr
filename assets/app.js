@@ -185,7 +185,7 @@ $(function(){
     $(window).scroll(function() {    
         var scrollPosition = $(window).scrollTop();
 
-        if (scrollPosition > 20550) {
+        if (scrollPosition > 20000) {
             $('.btn_scroll-down').removeClass("animate__animated animate__fadeInLeft");
             $('.btn_scroll-down').addClass("animate__animated animate__fadeOutRight");
         }
