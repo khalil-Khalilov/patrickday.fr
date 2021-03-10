@@ -104,8 +104,8 @@ while($donnees = $req->fetch()){
         <li class="">Categories:</li>
         <li id="category-dessin"><a class="kh-items" href="#">Dessins</a></li>
         <li id="category-peintures"><a class="kh-items" href="#">Peintures</a></li>
-        <li id="category-sculpture"><a class="kh-items" href="#">Sculpture</a></li>
-        <li id="category-livreObject"><a class="kh-items" href="#">Livre Object</a></li>
+        <li id="category-sculpture"><a class="kh-items" href="#">Sculptures</a></li>
+        <li id="category-livreObject"><a class="kh-items" href="#">Livres Objet</a></li>
         <li id="category-videos"><a class="kh-items" href="#">Vidéos</a></li>
     </ul>
 </div>

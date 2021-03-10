@@ -51,7 +51,6 @@ $i = 1;
 
 <!--Liste des images-->
 <div class="kh-container">
-    <h1>Liste des images</h1>
     <div id="container">
 
         <table  class="table table-success table-striped">
