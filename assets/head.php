@@ -100,10 +100,10 @@ $success = null;
         <div class="Clogin">
         <?php
         if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
-    echo "<a href='deconnexion.php'><em>Se déconnecter</em></a>";
+    echo "<a href='deconnexion.php'><em id='scrollUp'>Se déconnecter</em></a>";
     echo " <br /><a href='administration.php'><em> Administration</em></a>";
     } else {
-      echo "<a href='connexion.php'><em>Se connecter</em></a>";
+      echo "<a href='connexion.php'><em id='connexionAdmin'>Se connecter</em></a>";
     }
     ?>
       </div>
@@ -126,11 +126,11 @@ $success = null;
 
 
     <!--Btn scroll DOWN-->
-    <a href="#scrollDown"><i class="fas fa-arrow-circle-down btn_scroll-down"></i></a>
+    <a href="#scrollDown" class="scrollBtns"><i class="fas fa-arrow-circle-down btn_scroll-down"></i></a>
 
 
     <!--Btn scroll UP-->
-    <a href="#scrollUp"><i class="fas fa-arrow-circle-up btn_scroll-up not_show-container"></i></a>
+    <a href="#scrollUp" class="scrollBtns"><i class="fas fa-arrow-circle-up btn_scroll-up not_show-container"></i></a>
 
 
 
