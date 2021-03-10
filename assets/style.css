@@ -745,17 +745,18 @@ button#monBoutonRose{
   color:#fff;
 }
 
+
 /* CONNEXION.PHP */
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #720442 !important;
-  border-color: #5a0133 !important;
+  background-color:#720442 !important;
+  border-color:#5a0133 !important;
 }
 
 .btn-primary {
-  border-color: #3a0121 !important;
-  background-color: #8E0754 !important;
+  border-color:#3a0121 !important;
+  background-color:#8E0754 !important;
 }
 
 #monBouton{
@@ -766,7 +767,7 @@ button#monBoutonRose{
 }
 
 #monBouton:hover{
-  background: #8E0754;
+  background:#8E0754;
   color: #767575;
 }
 

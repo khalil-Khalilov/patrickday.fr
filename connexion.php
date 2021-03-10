@@ -40,11 +40,11 @@ if(!empty($_POST['pseudonyme']) && !empty($_POST['mot_de_passe'])) {
 require('assets/affichage_erreur.php');
 ?>
 
-<?php if(empty($_SESSION['pseudonyme'])) : ?>
+<?php if(empty($_SESSION['pseudonyme'])):?>
 
   <form action="" method="POST" class="row g-3 needs-validation"  novalidate>
     <div class="col-md-4 position-relative">
-      <label for="pseudonyme" class="form-label">Prenom:</label>
+      <label for="pseudonyme" class="form-label">Prénom</label>
       <input type="text" class="form-control" name="pseudonyme" id="pseudonyme" required>
     </div>
 
@@ -54,7 +54,7 @@ require('assets/affichage_erreur.php');
     </div>
     
     <div class="col-12">
-      <button class="btn btn-primary" type="submit">Se connecter</button>
+      <button class="btn btn-primary" type="submit">se connecter</button>
     </div>
   </form>
 

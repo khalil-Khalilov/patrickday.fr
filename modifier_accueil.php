@@ -19,7 +19,7 @@ if(!empty($_GET['id'])){
 
     $sql = "SELECT * FROM text_accueil WHERE id = :id";
     $requete = $pdo -> prepare($sql);
-   $requete ->execute(['id' => $id]);
+    $requete ->execute(['id' => $id]);
     $donnees = $requete->fetch();
 }
 
@@ -28,22 +28,24 @@ else{
 }
 ?>
 
+
 <?php
+
 if(!empty($_POST['titre']) && !empty($_POST['contenu']) && !empty($_POST['second_contenu']) && !empty($_POST['troisieme_contenu'])){
   $titre = htmlspecialchars( $_POST['titre']);
   $contenu = htmlspecialchars($_POST['contenu']);
   $second_contenu = htmlspecialchars($_POST['second_contenu']);
   $troisieme_contenu = htmlspecialchars($_POST['troisieme_contenu']);
 
-  $sql = "UPDATE `text_accueil` SET  
-  `titre`= :titre,
-  `contenu`= :contenu,
-  `second_contenu`= :second_contenu,
-  `troisieme_contenu`= :troisieme_contenu,
-     WHERE id = :id";      
-          
-  $requete = $pdo -> prepare($sql);
-  $resultat = $requete -> execute([
+  $sql = ('UPDATE `text_accueil` SET  
+  `titre`=:titre,
+  `contenu`=:contenu,
+  `second_contenu`=:second_contenu,
+  `troisieme_contenu`=:troisieme_contenu
+     WHERE id =:id');      
+       
+  $requete = $pdo->prepare($sql);
+  $resultat = $requete->execute([
       'titre' => $titre,
       'contenu' => $contenu,
       'second_contenu' => $second_contenu,
@@ -52,10 +54,11 @@ if(!empty($_POST['titre']) && !empty($_POST['contenu']) && !empty($_POST['second
 
   ]);
 
+  var_dump($resultat);  
   
     if ($resultat) {
         echo "<div class='alert alert-success' role='alert'>L'article a été modifié<br></div>";
-        header("refresh:2;url=index.php");
+        header("refresh:1;url=index.php");
     }
     else{
         echo "<div class='alert alert-danger' role='alert'>Une erreur est survenue.</div>";
