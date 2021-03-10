@@ -32,8 +32,6 @@ else{
 
 <?php
 
-var_dump($_POST);
-
 if(!empty($_POST['formulaire_envoyer'])){
     if(empty($_POST['gallery_column'])){
         $erreurs[] = "Vous n'avez pas choisi la colonne !";
