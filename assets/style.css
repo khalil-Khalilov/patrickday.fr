@@ -894,6 +894,9 @@ button#monBoutonRose{
     width: 50%;
     margin: 20px;
   }
+  .stext p{
+    text-align:center;
+  }
   
   #carousel{
   display: none;
@@ -921,6 +924,9 @@ button#monBoutonRose{
   @media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
     .stext{
       font-size: 13px;
+    }
+    .stext p{
+      text-align:center;
     }
   
     input[type=submit] {
@@ -1089,6 +1095,10 @@ button#monBoutonRose{
         padding: 30px;
         border-radius: 15px;
         background-color: #433e45;
+      }
+
+      .stext p{
+        text-align:center;
       }
   
       #carousel{
