@@ -49,6 +49,7 @@ body {
   border-left: 8px solid black;
   border-bottom: 8px solid #9e085e;
   border-radius: 0px 0px 10px 10px;
+  margin-bottom: 2em;
 }
 
 .Cnomsite {     /*div qui gère le nom du site Patrick DAY*/
@@ -675,6 +676,7 @@ margin:14px;
 
 #admin_nav-items{
   display: flex;
+  margin-top:2em;
   justify-content: space-between;
   padding:0;
 }
@@ -1256,6 +1258,11 @@ button#monBoutonRose{
     }
 
     @media all and (max-width: 767px){
+
+      .kh-container {
+        margin-bottom: 4em;
+        margin-top: 2em;
+      }
 
       .scrollBtns{
         display: none;

@@ -44,17 +44,17 @@ require('assets/affichage_erreur.php');
 
   <form action="" method="POST" class="row g-3 needs-validation"  novalidate>
     <div class="col-md-4 position-relative">
-      <label for="pseudonyme" class="form-label">First name</label>
+      <label for="pseudonyme" class="form-label">Prenom:</label>
       <input type="text" class="form-control" name="pseudonyme" id="pseudonyme" required>
     </div>
 
     <div class="col-md-4 position-relative">
-      <label for="mot_de_passe" class="form-label">Mot de passe</label>
+      <label for="mot_de_passe" class="form-label">Mot de passe:</label>
       <input type="password" class="form-control" name="mot_de_passe" id="mot_de_passe" required>
     </div>
     
     <div class="col-12">
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      <button class="btn btn-primary" type="submit">Se connecter</button>
     </div>
   </form>
 
