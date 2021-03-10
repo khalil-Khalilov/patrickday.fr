@@ -15,7 +15,7 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
 
   <?php
 if(!empty($_GET['id'])){
-    $id = $_GET['id'];
+    $id =$_GET['id'];
 
     $sql = "SELECT * FROM text_accueil WHERE id = :id";
     $requete = $pdo -> prepare($sql);
@@ -35,21 +35,20 @@ if(!empty($_POST['titre']) && !empty($_POST['contenu']) && !empty($_POST['second
   $second_contenu = htmlspecialchars($_POST['second_contenu']);
   $troisieme_contenu = htmlspecialchars($_POST['troisieme_contenu']);
 
-  $sql = "UPDATE `text_accueil` SET  
+  $sql = ('UPDATE `text_accueil` SET  
   `titre`= :titre,
-  `contenu`= :contenu,
-  `second_contenu`= :second_contenu,
-  `troisieme_contenu`= :troisieme_contenu,
-     WHERE id = :id";      
+  `contenu` =:contenu,
+  `second_contenu` =:second_contenu,
+  `troisieme_contenu` =:troisieme_contenu
+     WHERE id =:id');      
           
-  $requete = $pdo -> prepare($sql);
-  $resultat = $requete -> execute([
+  $requete =$pdo->prepare($sql);
+  $resultat =$requete->execute([
       'titre' => $titre,
       'contenu' => $contenu,
       'second_contenu' => $second_contenu,
       'troisieme_contenu' => $troisieme_contenu,
       'id' => $id 
-
   ]);
 
   
