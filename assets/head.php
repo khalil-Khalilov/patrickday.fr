@@ -125,13 +125,13 @@ $success = null;
 
    
 
-
+    
     <!--Btn scroll DOWN-->
-    <a href="#scrollDown" class="scrollBtns"><i class="fas fa-arrow-circle-down btn_scroll-down"></i></a>
+    <a href="#scrollDown" class="scrollBtns"><i class="fas fa-caret-square-down btn_scroll-down"></i></a>
 
 
     <!--Btn scroll UP-->
-    <a href="#scrollUp" class="scrollBtns"><i class="fas fa-arrow-circle-up btn_scroll-up not_show-container"></i></a>
+    <a href="#scrollUp" class="scrollBtns"><i class="fas fa-caret-square-up btn_scroll-up not_show-container"></i></a>
 
 
 

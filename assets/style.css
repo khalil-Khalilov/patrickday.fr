@@ -788,7 +788,7 @@ button#monBoutonRose{
 /*Btn Scroll UP - Khalil*/
 .btn_scroll-up{
   font-size: 4em;
-  color: #e64141;
+  color: #c51478;
   z-index: 999;
   position: fixed;
   top: 88%;
@@ -798,7 +798,7 @@ button#monBoutonRose{
 /*Btn Scroll DOWN - Khalil*/
 .btn_scroll-down{
   font-size: 4em;
-  color: #e64141;
+  color: #c51478;
   z-index: 999;
   position: fixed;
   top: 88%;
