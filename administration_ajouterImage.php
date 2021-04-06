@@ -4,7 +4,7 @@ require('assets/head.php');
 
 <?php
 if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
-    echo "Bienvenue sur l'administration.";
+    echo "<h1>Bienvenue sur l'administration</h1>";
 } else {
     die("<p id='msg_error-404'>Page Web inaccessible</p>");
 }
@@ -32,13 +32,13 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
                     move_uploaded_file($_FILES['monImage']['tmp_name'], $destination);
                 }
                 else{
-                    echo '<div class="alert alert-danger" role="alert">L\'extension d\'image n\'est pas autorisé !</div>';
+                    echo '<div class="alert alert-danger" role="alert">L\'extension d\'image n\'est pas autorisée !</div>';
                 }
             }
         }
         else{
-            echo '<div class="alert alert-danger" role="alert">Le taille du fichier dépassé la limite permise, 
-            esseyer de compresses l\'image ou convertire son extension en jpg, png ou webp</div>';
+            echo '<div class="alert alert-danger" role="alert">La taille du fichier dépasse la limite permise, 
+            essayer de compresser l\'image ou  de convertir son extension en jpg, png ou webp</div>';
         }
 
         $sql = ('INSERT INTO `images_categorie`(`adresse_image`, `titre_image`, `gallery_column`, `type_image`) 
@@ -76,13 +76,19 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
 
     <div class="mb-3">
         <select class="form-select" required aria-label="Select picture type"  name="type_image">
-            <option value="">Selectionner le type d'image</option>
+            <option value="">Sélectionner le type d'image</option>
             <option value="Dessin">Dessin</option>
             <option value="Peinture">Peinture</option>
             <option value="Sculpture">Sculpture</option>
-            <option value="Livre Object">Livre Object</option>
+            <option value="Livre Object">Livre Objet</option>
         </select>
 
+        <div class="invalid-feedback">Sélectionner le type d'image</div>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" value="1" name="gallery_column" id="gallery_column1" required>
+        <label class="form-check-label" for="gallery_column1">Première Colonne</label>
     </div>
 
      <div id="container-for-checkBtn">

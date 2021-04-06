@@ -40,7 +40,7 @@ require('assets/affichage_erreur.php');
 
 
 
-  <form action="" method="POST" class="row g-3 needs-validation"  novalidate>
+  <form class="was-validated" action="" method="POST" class="row g-3 needs-validation"  novalidate>
     <div class="col-md-4 position-relative">
       <label for="pseudonyme" class="form-label">Prénom</label>
       <input type="text" class="form-control" name="pseudonyme" id="pseudonyme" required>
@@ -50,12 +50,11 @@ require('assets/affichage_erreur.php');
       <label for="mot_de_passe" class="form-label">Mot de passe:</label>
       <input type="password" class="form-control" name="mot_de_passe" id="mot_de_passe" required>
     </div>
-    
+    <br/>
     <div class="col-12">
       <button class="btn btn-primary" type="submit">se connecter</button>
     </div>
   </form>
-
 
 <?php
 require('assets/footer.php');

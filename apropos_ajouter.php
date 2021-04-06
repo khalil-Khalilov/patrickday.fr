@@ -9,13 +9,6 @@ require('assets/head.php');
 if(!empty($_POST['formulaire_envoyer'])){
 
     $erreurs=[];
-    if($_POST['type_categorie']==="Sélectionner la catégorie de l'élément"){ 
-        $erreurs[] = "Vous n'avez pas choisi la catégorie de l'élément !";
-    }
-
-    if($_FILES['monImage']['error']!=0){
-        $erreurs[] = "Vous n'avez pas choisi d'image pour l'élément à ajouter!";
-    }
 
     if(empty($erreurs)){
 
@@ -81,11 +74,11 @@ if(!empty($_POST['formulaire_envoyer'])){
 
     <h2>Ajouter un élément</h2>
     <!-- FORMULAIRE -->
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form class="was-validated" action="" method="POST" enctype="multipart/form-data">
 
         <!--Button Select Type-->
-        <select class="form-select" aria-label="Select picture type" name="type_categorie">
-            <option selected>Sélectionner la catégorie de l'élément</option>
+        <select class="form-select" aria-label="Select picture type" name="type_categorie" required>
+            <option value="">Sélectionner la catégorie de l'élément</option>
             <option value="articles">Les articles de presse</option>
             <option value="affiches">Théâtre, Comédies musicales, Films</option>
             <option value="comedien">Le Comédien</option>
@@ -95,21 +88,23 @@ if(!empty($_POST['formulaire_envoyer'])){
         <!--Input TITRE IMAGE-->
         <div class="form-group">
             <label for="titreImage">Titre:</label>
-            <input type="text" class="form-control"  name="titreImage" id="titreImage" value="">
+            <input type="text" class="form-control"  name="titreImage" id="titreImage" value="" required>
         </div>
 
         <!--Input UPLOAD IMAGE-->
         <div class="form-group">
             <label for="monImage">Image:</label>
-            <input type="file" name="monImage" id="monImage" value="" />
+            <input type="file" class="form-control" name="monImage" id="monImage" value="" required/>
+            <div class="invalid-feedback">Attention à la taille de l'image et à l'extension('JPG', 'jpg', 'jpeg', 'png', 'gif')</div>
         </div>
 
         <input type="hidden" name="formulaire_envoyer" value="ghost_btn" />
         <br/>
         <button type="submit" class="btn" id="monBoutonRose">Valider</button>
-        
+        <p>Si après validation du formulaire d'ajout, le message suivant <span style="color:green;">"L'élément a bien été ajouté"</span> ne s'affiche pas, c'est que la taille de votre image est trop importante ou que l'extension n'est pas la bonne.</p>
     </form>  
     <br/>
+    
 <?php
 require('assets/footer.php');
 ?>

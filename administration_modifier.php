@@ -61,8 +61,8 @@ if(!empty($_POST['formulaire_envoyer'])){
             }
         }
         else{
-            echo '<div class="alert alert-danger" role="alert">Le taille du fichier dépassé la limite permise, 
-            esseyer de compresses l\'image ou convertire son extension en jpg, png ou webp</div>';
+            echo '<div class="alert alert-danger" role="alert">Le taille du fichier dépasse la limite permise, 
+            essayer de compresser l\'image ou de convertir son extension en jpg, png ou webp</div>';
         }
         
 
@@ -103,18 +103,18 @@ if(!empty($_POST['formulaire_envoyer'])){
 
     <div class="mb-3">
         <select class="form-select" required aria-label="Select picture type"  name="type_image">
-            <option value="">Selectionner le type d'image</option>
+            <option value="">Sélectionner le type d'image</option>
             <option value="Dessin">Dessin</option>
             <option value="Peinture">Peinture</option>
             <option value="Sculpture">Sculpture</option>
-            <option value="Livre Object">Livre Object</option>
+            <option value="Livre Object">Livre Objet</option>
         </select>
-        <div class="invalid-feedback">Selectionner le type d'image</div>
+        <div class="invalid-feedback">Sélectionner le type d'image</div>
     </div>
 
     <div class="form-check">
         <input class="form-check-input" type="radio" value="1" name="gallery_column" id="gallery_column1" required>
-        <label class="form-check-label" for="gallery_column1">Premier Colonne</label>
+        <label class="form-check-label" for="gallery_column1">Première Colonne</label>
     </div>
 
     <div class="form-check ">
@@ -137,12 +137,12 @@ if(!empty($_POST['formulaire_envoyer'])){
     <div class="mb-3">
         <label for="titreImage" class="form-label">Titre Image:</label>
         <input type="text" class="form-control " name="titreImage" id="titreImage" value="<?=$donnees['titre_image'];?>" required></input>
-        <div class="invalid-feedback">Tape le titre de l'image</div>
+        <div class="invalid-feedback">Taper le titre de l'image</div>
     </div>
 
     <div class="mb-3">
         <input type="file" class="form-control" name="monImage" id="monImage" aria-label="monImage" required>
-        <div class="invalid-feedback">Selectionner l'image</div>
+        <div class="invalid-feedback">Sélectionner l'image</div>
     </div>
 
     <input type="hidden" name="formulaire_envoyer" value="ghost_btn" />
