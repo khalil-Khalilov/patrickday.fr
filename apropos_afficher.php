@@ -83,11 +83,11 @@ if(!empty($_GET['suppr'])){
               <td><?=$categorie['titre_categorie'];?></td>                    
               <td>
                 <a onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')" 
-                  href="apropos_afficher.php?suppr=<?= $donnees['id']; ?>">
+                  href="apropos_afficher.php?suppr=<?= $donnees['id']; ?>">Supprimer
                   <i class="fas fa-trash-alt"></i>
                 </a>
                 <a onclick="return confirm('Voulez-vous vraiment modifier cet élément ?')" 
-                  href="apropos_modifier.php?modifier=<?= $donnees['id']; ?>">
+                  href="apropos_modifier.php?modifier=<?= $donnees['id']; ?>">Modifier
                   <i class="fas fa-wrench"></i>
                 </a>
               </td>

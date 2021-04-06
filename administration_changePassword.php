@@ -4,9 +4,9 @@ require('assets/head.php');
 
 <?php
 if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
-    echo "Bienvenue sur l'administration.";
+    echo "<h1>Bienvenue sur l'administration</h1>";
 } else {
-    die("PAS DE HACK");
+    die("<p id='msg_error-404'>Page Web inaccessible</p>");
 }
 
 ?>
@@ -23,12 +23,9 @@ if(!empty($_POST['formulaire_envoyer'])){
     if(count($erreurs) === 0){
 
         $new_nickname = htmlspecialchars($_POST['new_nickname']);
-        $new_password = htmlspecialchars($_POST['new_password']);
-        $password="ARGON2ID*V=19+M=65536,T=4,P=1*DZRZDNC3ZHN0VGRNMJV";
+        $new_password = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
         $rang = 1;
         
-
-        $encrypted_password=openssl_encrypt($new_password,"AES-128-ECB",$password);
 
         $sql = ('UPDATE `user` SET `pseudonyme`=:pseudonyme,`mot_de_passe`=:mot_de_passe WHERE rang=:rang');
 
@@ -36,12 +33,12 @@ if(!empty($_POST['formulaire_envoyer'])){
 
         $resultat = $req->execute([
             'pseudonyme' => $new_nickname,
-            'mot_de_passe' => $encrypted_password,
+            'mot_de_passe' => $new_password,
             'rang' => $rang
         ]);
 
         if($resultat) {
-            $success =  "Le mot de passe et pseudonyme ont bien été modifié.";
+            $success =  "Le mot de passe et le pseudonyme ont bien été modifiés.";
             //header("refresh:3;url=index.php");
         }
         else {
@@ -62,7 +59,7 @@ if(!empty($_POST['formulaire_envoyer'])){
 
 <!--Modiffier Mot de passe-->
 <div class="kh-container"> 
-    <h1>Modiffier Mot de passe</h1>
+    <h1>Modifier Mot de passe</h1>
 
     <!-- FORMULAIRE -->
     <div id="wrapper">
@@ -70,13 +67,13 @@ if(!empty($_POST['formulaire_envoyer'])){
             <div class="mb-3">
                 <label for="pseudonyme" class="form-label">Nouveau Pseudonyme:</label>
                 <input type="text" class="form-control " name="new_nickname" id="new_nickname" placeholder="Patrick" required></input>
-                <div class="invalid-feedback">Tape le nouveau Pseudonyme</div>
+
             </div>
 
             <div class="mb-3">
                 <label for="mot_de_passe" class="form-label">Nouveau Mot de passe:</label>
                 <input type="password" class="form-control " name="new_password" id="new_password" required></input>
-                <div class="invalid-feedback">Tape le nouveau Mot de passe</div>
+
             </div>
 
             <input type="hidden" name="formulaire_envoyer" value="ghost_btn" />

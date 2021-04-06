@@ -4,9 +4,9 @@ require('assets/head.php');
 
 <?php
 if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
-    echo "Bienvenue sur l'administration.";
+    echo "<h1>Bienvenue sur l'administration</h1>";
 } else {
-    die("PAS DE HACK");
+    die("<p id='msg_error-404'>Page Web inaccessible</p>");
 }
 
 ?>
@@ -60,7 +60,7 @@ $i = 1;
                     <th scope="col">Image</th>
                     <th scope="col">Titre</th>
                     <th scope="col">Type de galerie</th>
-                    <th scope="col">Numero de la colonne</th>
+                    <th scope="col">Numéro de la colonne</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>

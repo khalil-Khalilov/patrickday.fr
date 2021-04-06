@@ -101,11 +101,11 @@ while($donnees = $req->fetch()){
 <!--Categories bar-->
 <div class="kh-container" id="kh-categories-container">
     <ul id="kh-categories">
-        <li class="">Categories:</li>
+        <li class="">Catégories:</li>
         <li id="category-dessin"><a class="kh-items" href="#">Dessins</a></li>
         <li id="category-peintures"><a class="kh-items" href="#">Peintures</a></li>
         <li id="category-sculpture"><a class="kh-items" href="#">Sculptures</a></li>
-        <li id="category-livreObject"><a class="kh-items" href="#">Livres Objet</a></li>
+        <li id="category-livreObject"><a class="kh-items" href="#">Livres Objets</a></li>
         <li id="category-videos"><a class="kh-items" href="#">Vidéos</a></li>
     </ul>
 </div>
