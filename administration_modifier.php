@@ -7,7 +7,7 @@ require('assets/head.php');
 if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
     echo "<h1>Bienvenue sur l'espace administration</h1><br/>";
 } else {
-    die("PAS DE HACK");
+    die("<p id='msg_error-404'>Page Web inaccessible</p>");
 }
 ?>
 

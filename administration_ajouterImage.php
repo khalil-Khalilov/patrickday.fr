@@ -6,7 +6,7 @@ require('assets/head.php');
 if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
     echo "Bienvenue sur l'administration.";
 } else {
-    die("PAS DE HACK");
+    die("<p id='msg_error-404'>Page Web inaccessible</p>");
 }
 
 ?>
@@ -72,8 +72,6 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
 ?>
 
 
-<h1>Ajouter une image</h1>
-
 <form class="was-validated" action="" method="POST" enctype="multipart/form-data">
 
     <div class="mb-3">
@@ -84,42 +82,43 @@ if(isset($_SESSION['rang']) && $_SESSION['rang'] == 1) {
             <option value="Sculpture">Sculpture</option>
             <option value="Livre Object">Livre Object</option>
         </select>
-        <div class="invalid-feedback">Selectionner le type d'image</div>
+
     </div>
 
-    <div class="form-check">
-        <input class="form-check-input" type="radio" value="1" name="gallery_column" id="gallery_column1" required>
-        <label class="form-check-label" for="gallery_column1">Premier Colonne</label>
-    </div>
+     <div id="container-for-checkBtn">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="1" name="gallery_column" id="gallery_column1" required>
+            <label class="form-check-label" for="gallery_column1">Premier Colonne</label>
+        </div>
 
-    <div class="form-check ">
-        <input class="form-check-input" type="radio" value="2" name="gallery_column" id="gallery_column2" required>
-        <label class="form-check-label" for="gallery_column2">Deuxième Colonne</label>
-    </div>
+        <div class="form-check ">
+            <input class="form-check-input" type="radio" value="2" name="gallery_column" id="gallery_column2" required>
+            <label class="form-check-label" for="gallery_column2">Deuxième Colonne</label>
+        </div>
 
-    <div class="form-check">
-        <input class="form-check-input" type="radio" value="3" name="gallery_column" id="gallery_column3" required>
-        <label class="form-check-label" for="gallery_column3">Troisième Colonne</label>
-    </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="3" name="gallery_column" id="gallery_column3" required>
+            <label class="form-check-label" for="gallery_column3">Troisième Colonne</label>
+        </div>
 
-    <div class="form-check mb-3">
-        <input class="form-check-input" type="radio" value="4" name="gallery_column" id="gallery_column4" required>
-        <label class="form-check-label" for="gallery_column4">Quatrième Colonne</label>
-        
-    </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="4" name="gallery_column" id="gallery_column4" required>
+            <label class="form-check-label" for="gallery_column4">Quatrième Colonne</label>
+        </div>
+     </div>
+
 
     <div class="mb-3">
         <label for="titreImage" class="form-label">Titre Image:</label>
         <input type="text" class="form-control " name="titreImage" id="titreImage" required></input>
-        <div class="invalid-feedback">Tape le titre de l'image</div>
     </div>
 
     <div class="mb-3">
+        <label for="monImage" class="form-label">Selectionner l'image:</label>
         <input type="file" class="form-control" name="monImage" id="monImage" aria-label="monImage" required>
-        <div class="invalid-feedback">Selectionner l'image</div>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3" id="valider-add_image">
         <button class="btn btn-primary" type="submit" >Valider</button>
     </div>
 </form>
