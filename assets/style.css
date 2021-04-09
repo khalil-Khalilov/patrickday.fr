@@ -101,7 +101,7 @@ body {
 }
 
 
-/* ACCEUIL */
+/* ACCUEIL */
 
 .stext{
   text-align: center;
@@ -698,6 +698,15 @@ color:#767575;
     font-style: normal !important;
   }
 
+  .team {
+    display:flex;
+    justify-content: flex-start;
+  }
+
+  .team li {
+    padding:10px;
+  }
+
 
 .table th,.table td{
   color:#767575;
@@ -887,6 +896,19 @@ button#monBoutonRose{
   background-color: #2b262d;
   margin: 23px;
   }
+
+  }
+
+  @media screen and (max-width: 991px){ 
+
+  .team {
+    display:block;
+  }
+
+  .team li {
+    padding:0;
+  }
+
   }
   
   

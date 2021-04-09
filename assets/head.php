@@ -18,7 +18,8 @@ $success = null;
     $message = $_POST["message"];
     $toEmail = "stalkergame@sfr.fr";
     $mailHeaders = "From: " . $name . "<". $email .">\r\n";
-    if(mail($toEmail, $message, $mailHeaders)) {
+    ini_set("smtp_port",1025); //pour utiliser maildev en local
+    if(mail($toEmail,'Contact', $message, $mailHeaders)) {
       $mail_msg = "Vos informations de contact ont été reçues avec succés.";
       $type_mail_msg = "success";
     }else{
