@@ -23,6 +23,13 @@
               </ul>
             </div>
           </div>
+
+          <ul class="team">
+            <li> Site web réalisé par la Team:</li>
+            <li><a href="https://www.portfolio.cdemit.com">Carole DEMIT</a></li>
+            <li><a href="">Souheil DERRADJI</a></li>
+            <li><a href="">Khalil KHALILOV</a></li>
+          </ul>
         </div>
 
 
